@@ -507,15 +507,11 @@ body.is-home .home-button {
     color: #121212;
     font-size: 16px;
     line-height: 1.3;
-    /* Yellow highlight sweep — matches .text-highlight in body copy */
-    background-image: linear-gradient(120deg, var(--highlight) 0%, var(--highlight) 100%);
-    background-repeat: no-repeat;
-    background-size: 0% 38%;
-    background-position: 0 88%;
-    transition: background-size .5s cubic-bezier(.215,.61,.355,1), color .25s ease;
+    transition: color .25s ease;
 }
 .section-jumps a::after {
-    /* thin rest-state underline */
+    /* thin rest-state underline; picks up currentColor so it follows the
+       text as it transitions to --accent on hover. */
     content: "";
     position: absolute;
     left: 0;
@@ -523,17 +519,19 @@ body.is-home .home-button {
     bottom: -2px;
     height: 1px;
     background: currentColor;
-    opacity: .4;
-    transition: opacity .25s ease;
+    opacity: .5;
+    transition: opacity .25s ease, background-color .25s ease;
 }
+/* Hover state matches the homepage .accordion-title:hover pattern —
+   colour transitions to the shared --accent (terracotta) with no yellow
+   highlight sweep. Underline stays but inherits the new colour. */
 .section-jumps a:hover,
 .section-jumps a:focus-visible {
-    background-size: 100% 38%;
-    color: #121212;
+    color: var(--accent);
 }
 .section-jumps a:hover::after,
 .section-jumps a:focus-visible::after {
-    opacity: 0;
+    opacity: 1;
 }
 
 /* ============================================================
