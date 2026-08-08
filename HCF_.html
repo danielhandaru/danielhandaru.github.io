@@ -1,0 +1,1416 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Page Title -->
+        <title>HCF Marketplace — Health Insurance UX | Left Dial</title>
+        <!--/ Page Title -->
+
+        <meta name="author" content="Daniel Handaru" />
+        <meta name="description" content="Lead UX on HCF Private Health Insurance's Marketplace project — digital transformation, information architecture, design system and path-to-purchase research." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link
+            href="https://fonts.googleapis.com/css?family=Archivo:400,500,600,700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link href="css/plugins.css" rel="stylesheet" />
+        <link href="css/entypo.css" rel="stylesheet" />
+
+        <link href="style2.css" rel="stylesheet" />
+
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="images/folio/favicons/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            href="images/folio/favicons/favicon_2.ico"
+        />
+        <!--/ Favicons -->
+
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+
+            .project-header {
+                margin-bottom: 0;
+            }
+            /* .inLinks {
+                margin-bottom: 40px;
+            } */
+            .inLinks p a {
+                /* text-decoration: underline; */
+                color: #e0004d;
+            }
+
+            .inLinks a.underline::before {
+                background: #e0004d;
+            }
+            .menu-widget a {
+                color: #6d6d6d;
+            }
+            a:hover {
+                color: #ede574;
+            }
+            a.underline:hover {
+                color: #ede574;
+            }
+
+            .footer-list li a:hover {
+                color: #ede574;
+            }
+
+            .button {
+                display: block;
+                width: auto;
+                height: auto;
+                background: none;
+                padding: 10px;
+                text-align: center;
+                border-radius: 5px;
+                color: #e0004d;
+                font-weight: bold;
+                line-height: 18px;
+                font-size: 14px;
+                /* outline-color: red; */
+                border: 2px solid #e0004d;
+            }
+
+            p {
+                font-size: 18px;
+                line-height: 1.3;
+            }
+
+            /* p.big-p {
+                color: #928b8b;
+            } */
+            p.big-p {
+                color: #6d6d6d;
+            }
+
+            h2 {
+                color: #51284f;
+            }
+            h3 {
+                line-height: 1.3;
+                margin-top: 2.4rem;
+                margin-bottom: 1.3rem;
+                font-size: 28px;
+                font-weight: 400;
+                color: #51284f;
+            }
+
+            ul {
+                margin-left: 20px;
+            }
+            li {
+                padding-bottom: 20px;
+                font-size: 18px;
+                line-height: 1.6;
+                color: #6d6d6d;
+                list-style-type: square;
+            }
+            li::marker {
+                color: #e0004d;
+            }
+
+            footer .wrapper .c-col-12 h1 a {
+                text-decoration: none;
+            }
+
+            .new-menu {
+                position: absolute;
+                right: 7vw;
+                cursor: pointer;
+                top: 56px;
+                -webkit-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+                -webkit-transform-origin: center center;
+                -ms-transform-origin: center center;
+                transform-origin: center center;
+                z-index: 113;
+                width: 35px;
+                height: 35px;
+            }
+
+            .toggle-lineB {
+                display: block;
+                height: 2px;
+                width: 35px;
+                background: #000;
+                margin-bottom: 5px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .toggle-line-in {
+                visibility: hidden;
+            }
+            .is-active .toggle-line-in {
+                visibility: visible;
+            }
+
+            @media (max-width: 1250px) {
+                .hide {
+                    display: none;
+                }
+
+                p.big-p {
+                    font-size: 18px;
+                }
+            }
+            @media only screen and (max-width: 850px) {
+                .project-header .project-image {
+                    height: 30vh;
+                }
+            }
+        </style>
+        <link href="css/hover.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <!-- Loading Text -->
+        <div class="loading-text">Loading</div>
+        <!-- Loading Text -->
+
+        <!-- Lines (Don't Touch) -->
+        <div class="lines"></div>
+        <!-- /Lines -->
+
+        <!-- Page Loader -->
+        <div class="cygni-loader">
+            <div class="counter" data-count="99">00</div>
+        </div>
+        <!-- /Page Loader -->
+
+        <!-- Overlays (Don't Touch) -->
+        <div class="overlays"></div>
+        <!-- /Overlays -->
+
+        <!-- Header -->
+        <header class="site-header">
+            <!-- Branding -->
+            <!-- <div class="site-branding">
+                <img loading="lazy"
+                    class="dark-logo"
+                    src="images/cygni-logo.png"
+                    alt="Site Logo"
+                />
+                <img loading="lazy"
+                    class="light-logo"
+                    src="images/cygni-logo-light.png"
+                    alt="Site Light Logo"
+                />
+            </div> -->
+            <!-- /Branding -->
+
+            <!-- Menu -->
+            <div class="site-navigation">
+                <div class="home-button"><a href="index.html">HOME</a></div>
+                <!-- Menu Toggle (Don't Touch) -->
+                <div class="new-menu menu-toggle">
+                    <span class="toggle-lineB toggle-line-1"></span>
+                    <span class="toggle-lineB toggle-line-2"></span>
+                    <span class="hide">CONTACT</span>
+                </div>
+
+                <!-- Menu Overlays (Don't Touch) -->
+                <div class="menu-overlays"></div>
+                <!-- Menu Overlays -->
+
+                <div class="menu-wrapper">
+                    <!-- Navigation -->
+                    <ul class="menu">
+                        <!-- Main Menu -->
+                        <li class="menu-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="menu-item menu-item-active">
+                            <a href="HCF_.html">HCF</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="isuzu_.html">Isuzu</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="Chartered.html">CAANZ</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="Ricoh_1_.html">Ricoh</a>
+                        </li>
+                        <!-- /Main Menu -->
+                    </ul>
+                    <!-- /Navigation -->
+                </div>
+
+                <!-- Menu Widget (Left) -->
+                <div class="menu-widget-wrapper mww-1">
+                    <div class="menu-widget">
+                        <div class="menu-widget-title">WORK TOGETHER</div>
+
+                        <a href="mailto:daniel@left-dial.com"
+                            >daniel@left-dial.com</a
+                        >
+                    </div>
+                </div>
+                <!--/ Menu Widget (Left) -->
+
+                <!-- Menu Widget (Middle) -->
+                <div class="menu-widget-wrapper mww-2">
+                    <div class="scrolling-button">
+                        <a
+                            href="https://www.instagram.com/gridsanddots/?hl=en"
+                            target="_blank"
+                            >Grids & Dots</a
+                        >
+                    </div>
+                </div>
+                <!--/ Menu Widget (Middle) -->
+
+                <!-- Menu Widget (Right -->
+                <div class="menu-widget-wrapper mww-3">
+                    <div class="menu-widget">
+                        <ul class="widget-socials">
+                            <li>
+                                <a href="mailto:daniel@left-dial.com">mail</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/in/danielhandaru/"
+                                    target="_blank"
+                                    >linkedin</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.instagram.com/lonely_dot_photos"
+                                    target="_blank"
+                                    >instagram</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://open.spotify.com/artist/7ba827SJSUU4l3AORy4Doy"
+                                    target="_blank"
+                                    >spotify</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--/ Menu Widget (Right) -->
+            </div>
+            <!-- /Menu -->
+        </header>
+        <!-- /Header -->
+
+        <!-- Site Content -->
+        <div id="main" class="content">
+            <div
+                class="page-settings"
+                data-layout="light"
+                data-header-style="dark"
+                data-menu-layout="dark"
+                data-background="#f5f5f5"
+            ></div>
+
+            <!-- Single Project -->
+            <div class="single-project">
+                <!-- Project Header -->
+                <div class="project-header">
+                    <!-- Project Image — duotone-tinted via HCF purple overlay -->
+                    <div
+                        class="project-image"
+                        style="background-color: #51284f; opacity: 10%"
+                    >
+                        <img
+                            loading="lazy"
+                            src="images/folio/works/HCF/HCF-cover.jpg"
+                            alt="HCF Marketplace project header"
+                            style="opacity: 0.7; mix-blend-mode: multiply"
+                        />
+                    </div>
+                    <!--/ Project Image -->
+
+                    <div class="project-top">
+                        <!-- Project Category -->
+                        <div
+                            data-delay=".2"
+                            class="project-work has-animation skew-down"
+                        >
+                            digital transformation
+                        </div>
+                        <!-- Project Category -->
+
+                        <!-- Project Title -->
+                        <div class="project-title has-animation skew-up">
+                            <span style="color: #e0004d">HCF</span>
+                            <span style="color: #51284f">Marketplace</span>
+                        </div>
+
+                        <!-- Project Title -->
+                    </div>
+
+                    <!-- Project Metas -->
+                    <div class="project-meta">
+                        <div data-delay=".7" class="has-animation skew-up">
+                            <span class="pm-tit">Client: </span>HCF Private
+                            Health Insurance
+                        </div>
+
+                        <div data-delay=".8" class="has-animation skew-up">
+                            <span class="pm-tit">Project: </span>Marketplace
+                        </div>
+
+                        <div data-delay=".9" class="has-animation skew-up">
+                            <span class="pm-tit">Role: </span>User Experience
+                            Team Lead
+                        </div>
+                    </div>
+                    <!-- Project Metas -->
+                    <!-- Project Summary -->
+                    <div data-delay="1" class="project-summary">
+                        Managing a small team of designers, my project invovled
+                        driving the redesign of HCF visual systems, helping
+                        restructure the entire site information architecture and
+                        transactional flows, and improving the user’s ability to
+                        understand complex products to make more informed
+                        decisions at the outset of their quote journeys.
+                    </div>
+                    <!-- Project Summary -->
+                </div>
+                <!--/ Project Header -->
+
+                <!-- Page Settings -->
+                <!-- <div
+                class="page-settings"
+                data-layout="light"
+                data-header-style="dark"
+                data-menu-layout="dark"
+                data-background="#f5f5f5"
+            ></div> -->
+                <!-- Page Settings -->
+
+                <!-- Project Content -->
+                <div class="project-content">
+                    <!-- Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper (Small) -->
+                        <div class="wrapper-small" style="margin-bottom: 0">
+                            <!-- Jump links (moved above body copy) -->
+                            <div class="inLinks" style="margin-bottom: 60px">
+                                <div class="c-col-3">
+                                    <p>
+                                        <a
+                                            class="button"
+                                            style="color: #e0004d"
+                                            href="#homepage"
+                                        >
+                                            Homepage redesign</a
+                                        >
+                                    </p>
+                                </div>
+                                <div class="c-col-3">
+                                    <p>
+                                        <a
+                                            class="button"
+                                            style="color: #e0004d"
+                                            href="#DS"
+                                            >Design System</a
+                                        >
+                                    </p>
+                                </div>
+                                <div class="c-col-3">
+                                    <p>
+                                        <a
+                                            class="button"
+                                            style="color: #e0004d"
+                                            href="#1a"
+                                            >Global header
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="c-col-3">
+                                    <p>
+                                        <a
+                                            class="button"
+                                            style="color: #e0004d"
+                                            href="#1b"
+                                            >Path to purchase</a
+                                        >
+                                    </p>
+                                </div>
+                            </div>
+                            <!--/ Jump links -->
+
+                            <!-- Column -->
+                            <div class="c-col-12" style="margin-bottom: 0px">
+                                <!-- Text wrapper -->
+                                <div
+                                    class="text-wrapper"
+                                    style="margin-bottom: 80px"
+                                >
+                                    <p class="big-p">
+                                        Initially in this role as a UI
+                                        consultant, I moved into the Lead design
+                                        position at HCF’s digital transformation
+                                        project - Marketplace. Managing a team
+                                        of up to 5 designers, I guided the team
+                                        to lay the groundwork and baseline HCF's
+                                        major digital reimagining and strategic
+                                        pivot.
+                                    </p>
+                                    <p class="big-p">
+                                        This great project involved
+                                        reconsidering the look and feel of the
+                                        older digital assets and ideating new
+                                        foundational elements for a design
+                                        system. This was the seed of a
+                                        transformational project to change the
+                                        brand from being known primarily as a
+                                        healthcare provider to becoming a true
+                                        'marketplace' for all insurance needs.
+                                    </p>
+                                    <p class="big-p">
+                                        With this scope, I guided the team to
+                                        creating fresh componentry, templates
+                                        and ready-for-dev pages for handover to
+                                        production. We implemented an updated
+                                        information architecture, introducing
+                                        new sections and tools that would lay
+                                        the groundwork for the project which I
+                                        scoped, planned and did much of the UX
+                                        discovery / research for - the path to
+                                        purchase.
+                                    </p>
+                                </div>
+                                <!--/ Text wrapper -->
+                            </div>
+                            <!--/ Column -->
+
+                            <!-- Column -->
+                            <div
+                                class="c-col-12"
+                                style="margin-bottom: 80px"
+                                id="homepage"
+                            >
+                                <!-- Text wrapper -->
+                                <div class="text-wrapper">
+                                    <h2 style="color: #51284f">
+                                        Homepage redesign
+                                    </h2>
+                                    <p class="big-p">
+                                        This was a self-initiated project to
+                                        redesign and reimagine the HCF homepage.
+                                        Initial showcases to the business were
+                                        very received so that I almost
+                                        unexpectedly got the green light to test
+                                        3 variations of these designs live using
+                                        A/B testing.
+                                    </p>
+                                    <p
+                                        class="big-p"
+                                        style="margin-bottom: 28px"
+                                    >
+                                        These designs were a complete overall of
+                                        current HCF designs and had some
+                                        distinct goals -
+                                    </p>
+                                    <ul style="margin-left: 20px">
+                                        <li
+                                            style="
+                                                padding-bottom: 20px;
+                                                font-size: 18px;
+                                                line-height: 1.6;
+                                                color: #6d6d6d;
+                                                list-style-type: square;
+                                            "
+                                        >
+                                            Reskin and lightly
+                                            <b>rebrand HCF digital assets</b>
+                                            for a cleaner, more minimalistic,
+                                            modern and ultimately more usable
+                                            interface. Removing the clutter so
+                                            the user can interact with what is
+                                            actually important to them
+                                        </li>
+                                        <li
+                                            style="
+                                                padding-bottom: 20px;
+                                                font-size: 18px;
+                                                line-height: 1.6;
+                                                color: #6d6d6d;
+                                                list-style-type: square;
+                                            "
+                                        >
+                                            Rethinking what kind of information
+                                            a new user would like to see on the
+                                            homepage. Rather than bombarding
+                                            them with information without
+                                            context, lead the user into the
+                                            quote funnels with more of a
+                                            <b>storytelling</b> element rather
+                                            than being strictly product focused
+                                        </li>
+                                        <li
+                                            style="
+                                                padding-bottom: 20px;
+                                                font-size: 18px;
+                                                line-height: 1.6;
+                                                color: #6d6d6d;
+                                                list-style-type: square;
+                                            "
+                                        >
+                                            Give more prominence to different
+                                            products that HCF offers. Rather
+                                            than only being known as a Health
+                                            insurance company, let users more
+                                            easily browse products like Life,
+                                            Travel, Pet by giving them some
+                                            prominence and more
+                                            <b
+                                                >easily categorising the
+                                                solutions</b
+                                            >
+                                        </li>
+                                        <li
+                                            style="
+                                                padding-bottom: 20px;
+                                                font-size: 18px;
+                                                line-height: 1.6;
+                                                color: #6d6d6d;
+                                                list-style-type: square;
+                                            "
+                                        >
+                                            A redesign of the Homepage-facing
+                                            Health Quote funnel, testing the
+                                            questions in a different design
+                                            format so that users may skip a
+                                            number of questions within the flow
+                                            for a
+                                            <b
+                                                >faster initial quote
+                                                experience</b
+                                            >.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--/ Text wrapper -->
+                            </div>
+                            <!--/ Column -->
+                        </div>
+                        <!--/ Wrapper (Small) -->
+                    </div>
+                    <!--/ Section -->
+
+                    <!-- Img Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper -->
+                        <div class="wrapper">
+                            <!-- Column -->
+                            <div class="c-col-6">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img
+                                        loading="lazy"
+                                        src="images/folio/works/HCF/homepage/HP_v2_r.jpg"
+                                        alt="Single Image"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Column -->
+                            <div class="c-col-6">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img
+                                        loading="lazy"
+                                        src="images/folio/works/HCF/homepage/HP_v3_r.jpg"
+                                        alt="Single Image"
+                                    />
+                                </div>
+                                <!--/ Image Wrapper -->
+                            </div>
+                            <!--/ Column -->
+                        </div>
+                        <!-- Wrapper -->
+                    </div>
+                    <!--/ Section -->
+
+                    <!-- Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper (Small) -->
+                        <div class="wrapper-small" style="margin-bottom: 0">
+                            <!-- Column -->
+                            <div class="c-col-12" style="margin-bottom: 0px">
+                                <!-- Text wrapper -->
+                                <div
+                                    class="text-wrapper"
+                                    style="margin-bottom: 80px"
+                                >
+                                    <!--<p class="big-p">
+                                        These ideas and initial designs were
+                                        well-received by the business overall
+                                        and our design leader was impressed by
+                                        the strategies proposed through the
+                                        designs, which led to her recommendation
+                                        of myself to lead the design of the
+                                        Marketplace project, and my promotion to
+                                        Lead Designer.
+                                    </p>-->
+                                    <p class="big-p">
+                                        Version 1 was the eventual winner -
+                                        allowing the product sets to be more
+                                        immediately visible on the home page,
+                                        while creating a cleaner interface by
+                                        removing a lot of the uneccessary
+                                        clutter from current design. This allows
+                                        the user to focus better on what matters
+                                        to them and what they are looking for.
+                                    </p>
+                                    <p class="big-p">
+                                        Without proper qualitative research, my
+                                        guess as to why Version 2 performed
+                                        better than Version 3 would be that V3
+                                        may have sacrificed a lot of in-situ and
+                                        contextual information about the
+                                        products for speed in completion of the
+                                        initial quote funnel. The design did not
+                                        allow for enough space/time for the user
+                                        to understand the product and the
+                                        information that they were providing to
+                                        fully invest in the process
+                                    </p>
+                                    <p class="big-p">
+                                        Both design V1 + 2 vastly outperformed
+                                        the control which was the current state
+                                        sales website, so this was a very
+                                        successful project either way and will
+                                        lead and inform what the team does
+                                        within the Marketplace 1b project.
+                                    </p>
+                                </div>
+                                <!--/ Text wrapper -->
+                            </div>
+                            <!--/ Column -->
+                        </div>
+                        <!--/ Wrapper (Small) -->
+                    </div>
+                    <!--/ Section -->
+
+                    <!-- Section -->
+                    <div class="section" style="margin-bottom: 0" id="DS">
+                        <!-- Wrapper (Small) -->
+                        <div class="wrapper-small" style="margin-bottom: 0">
+                            <!-- Column -->
+                            <div class="c-col-12" style="margin-bottom: 0px">
+                                <!-- Text wrapper -->
+                                <div
+                                    class="text-wrapper"
+                                    style="margin-bottom: 80px"
+                                >
+                                    <h2 style="color: #51284f">
+                                        HCF Design System
+                                    </h2>
+                                    <p class="big-p">
+                                        My team was given a very short time
+                                        frame to deliver the Marketplace 1a
+                                        information architecture redesign
+                                        (approximately 3 months), and a large
+                                        part of the requirements for this
+                                        project included a complete redesign of
+                                        the look and feel of the Sales-facing
+                                        website ie. a new design system.
+                                    </p>
+                                    <p class="big-p">
+                                        The current digital experience at HCF
+                                        was dated, cluttered, did not meet WCAG
+                                        accessibility standards, had little
+                                        strategy behind the use of brand assets,
+                                        did not use scalable graphics and the
+                                        overall repetitive use of limited
+                                        components made the visual layout of the
+                                        website difficult to navigate for the
+                                        user.
+                                    </p>
+                                    <p class="big-p">
+                                        A particular goal of ours was to begin
+                                        using the primary ruby colour in an
+                                        active way, by only allowing primary
+                                        buttons in a layout if they were
+                                        strategically leading users down through
+                                        high engagement paths - namely,
+                                        directing users to the Quote funnel /
+                                        transactional part of the website. The
+                                        reduction of ruby elements to only the
+                                        most important elements of the site in
+                                        fact strengthened it’s use as a brand
+                                        asset. We also aimed to create more
+                                        white space for elements to breathe and
+                                        to guide the users eyes for travelling
+                                        through the website with more focus.
+                                    </p>
+                                </div>
+                                <!--/ Text wrapper -->
+                            </div>
+                            <!--/ Column -->
+                        </div>
+                        <!--/ Wrapper (Small) -->
+                    </div>
+                    <!--/ Section -->
+
+                    <!-- Img Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper -->
+                        <div class="wrapper">
+                            <!-- Column -->
+                            <div class="c-col-12">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img
+                                        loading="lazy"
+                                        src="images/folio/works/HCF/DS.webp"
+                                        alt="Single Image"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Column -->
+                        </div>
+                        <!--/ Column -->
+                    </div>
+                    <!-- Wrapper -->
+                </div>
+                <!--/ Section -->
+
+                <!-- Section -->
+                <div class="section" style="margin-bottom: 0">
+                    <!-- Wrapper (Small) -->
+                    <div class="wrapper-small" style="margin-bottom: 0">
+                        <!-- Column -->
+                        <div class="c-col-12" style="margin-bottom: 0px">
+                            <!-- Text wrapper -->
+                            <div
+                                class="text-wrapper"
+                                style="margin-bottom: 80px"
+                            >
+                                <div class="caption has-animation skew-up">
+                                    <!--copy here -->
+                                </div>
+
+                                <p class="big-p">
+                                    We wanted to redefine the use of colour and
+                                    space on the website. On the old site,
+                                    everything from buttons and containers to
+                                    components are all designed with hard, sharp
+                                    edges. These designs are shown to perform
+                                    well on corporate websites, but for an
+                                    business whose reputation is built on health
+                                    and being not-for-profit, we wanted to try
+                                    to use friendly, rounded corners on elements
+                                    of the new design system.
+                                </p>
+                            </div>
+                            <!--/ Text wrapper -->
+                        </div>
+                        <!--/ Column -->
+                    </div>
+                    <!--/ Wrapper (Small) -->
+                </div>
+                <!--/ Section -->
+
+                <!-- Section -->
+                <div class="section" style="margin-bottom: 0" id="1a">
+                    <!-- Wrapper (Small) -->
+                    <div class="wrapper-small" style="margin-bottom: 0">
+                        <!-- Column -->
+                        <div class="c-col-12" style="margin-bottom: 0px">
+                            <!-- Text wrapper -->
+                            <div
+                                class="text-wrapper"
+                                style="margin-bottom: 60px"
+                            >
+                                <h2 style="color: #51284f">
+                                    Marketplace 1a project - IA & Global
+                                    elements
+                                </h2>
+                                <p class="big-p">
+                                    Marketplace is essentially a long-term
+                                    digital transformation project which
+                                    includes reimagining how HCF products and
+                                    digital assets are presented, adding modern
+                                    intelligence tools to the quote funnels, and
+                                    improving the UX/UI of the digital assets to
+                                    meet WCAG accessiblilty standards and
+                                    responsive design (and making it look a lot
+                                    nicer).
+                                </p>
+                                <p class="big-p" style="margin-bottom: 28px">
+                                    These are the main optimisations that we
+                                    aimed to improve through this project -
+                                </p>
+
+                                <ul style="margin-left: 20px">
+                                    <li
+                                        style="
+                                            padding-bottom: 20px;
+                                            font-size: 18px;
+                                            line-height: 1.6;
+                                            color: #6d6d6d;
+                                            list-style-type: square;
+                                        "
+                                    >
+                                        Completely redesign the main navigation
+                                        and menus so that they offer clear next
+                                        steps, including restructure of
+                                        information architecture of
+                                        health-related products to guide the
+                                        user and allow them to find what they
+                                        need faster
+                                    </li>
+                                    <li
+                                        style="
+                                            padding-bottom: 20px;
+                                            font-size: 18px;
+                                            line-height: 1.6;
+                                            color: #6d6d6d;
+                                            list-style-type: square;
+                                        "
+                                    >
+                                        Based on competitive analysis
+                                        recommendations, to create a new 'Find
+                                        Health Insurance' section with various
+                                        informational landing pages and direct
+                                        access to the quote funnel
+                                    </li>
+                                    <li
+                                        style="
+                                            padding-bottom: 20px;
+                                            font-size: 18px;
+                                            line-height: 1.6;
+                                            color: #6d6d6d;
+                                            list-style-type: square;
+                                        "
+                                    >
+                                        To redesign the functionality and
+                                        information architecture of the huge FAQ
+                                        section so that it is consolidated into
+                                        a single area on the site where users
+                                        can easily access this important
+                                        information.
+                                    </li>
+                                </ul>
+
+                                <h3
+                                    style="
+                                        line-height: 1.3;
+                                        margin-top: 2.4rem;
+                                        margin-bottom: 1.3rem;
+                                        font-size: 28px;
+                                        font-weight: 400;
+                                        color: #51284f;
+                                    "
+                                >
+                                    Information architecture and Global Header /
+                                    Footer key considerations
+                                </h3>
+
+                                <p class="big-p" style="margin-bottom: 28px">
+                                    When given the remit to redesign what was a
+                                    cluttered and confusing UI in the global
+                                    header, these were our key considerations
+                                    taking into account the new information
+                                    architecture.
+                                </p>
+
+                                <ul style="margin-left: 20px">
+                                    <li
+                                        style="
+                                            padding-bottom: 20px;
+                                            font-size: 18px;
+                                            line-height: 1.6;
+                                            color: #6d6d6d;
+                                            list-style-type: square;
+                                        "
+                                    >
+                                        Minimise cognitive load - a large number
+                                        of options can lead to choice paralysis
+                                        and unintentionally sending users to the
+                                        wrong page. Using nudge-based
+                                        architecture helps to ensure we are
+                                        sending users down a desired path
+                                    </li>
+                                    <li
+                                        style="
+                                            padding-bottom: 20px;
+                                            font-size: 18px;
+                                            line-height: 1.6;
+                                            color: #6d6d6d;
+                                            list-style-type: square;
+                                        "
+                                    >
+                                        Site depth - Users should be able to
+                                        make it to their required destination
+                                        with a minimal amount of clicks while
+                                        still being exposed to the relevant
+                                        information that will improve their
+                                        likelihood of action or engagement
+                                    </li>
+                                    <li
+                                        style="
+                                            padding-bottom: 20px;
+                                            font-size: 18px;
+                                            line-height: 1.6;
+                                            color: #6d6d6d;
+                                            list-style-type: square;
+                                        "
+                                    >
+                                        Mobile use - Navigation will need to
+                                        operate slightly differently on mobile
+                                        with clear next steps maintaining
+                                        visibility on a smaller screen and
+                                        sufficiently sized tap targets
+                                    </li>
+                                    <li>
+                                        Consistency - Using consistent
+                                        labelling, and button designs to ease
+                                        user's understanding of what page.
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--/ Text wrapper -->
+                        </div>
+                        <!--/ Column -->
+                    </div>
+                    <!--/ Wrapper (Small) -->
+                </div>
+                <!--/ Section -->
+
+                <!-- Img Section -->
+                <div class="section" style="margin-bottom: 0">
+                    <!-- Wrapper -->
+                    <div class="wrapper" style="margin-bottom: 0">
+                        <!-- Column -->
+                        <div class="c-col-12">
+                            <!-- Image Wrapper -->
+                            <div class="image-wrapper">
+                                <img
+                                    loading="lazy"
+                                    src="images/folio/works/HCF/1a/Header.jpg"
+                                    alt="Single Image"
+                                />
+                            </div>
+                        </div>
+                        <!-- Column -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!-- Wrapper -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Section -->
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper (Small) -->
+                <div class="wrapper-small" style="margin-bottom: 0">
+                    <!-- Column -->
+                    <div class="c-col-12" style="margin-bottom: 0px">
+                        <!-- Text wrapper -->
+                        <div class="text-wrapper" style="margin-bottom: 80px">
+                            <div class="caption has-animation skew-up">
+                                <!--copy here -->
+                            </div>
+
+                            <!--<h2 class="has-animation lines-fade-up">
+                        HCF Design System
+                        </h2>-->
+                            <p class="big-p">
+                                By replacing the current nav menu with the
+                                current actual product line and restructuring
+                                the IA to include informational sections such as
+                                'Find..' which lead directly to the transaction
+                                funnel, we successfully reduced cognitive loads
+                                for the user and greatly simplified the user
+                                journey to successful conversion pages.
+                            </p>
+                            <h3
+                                style="
+                                    line-height: 1.3;
+                                    margin-top: 2.4rem;
+                                    margin-bottom: 1.3rem;
+                                    font-size: 28px;
+                                    font-weight: 400;
+                                    color: #51284f;
+                                "
+                            >
+                                Find Health Insurance
+                            </h3>
+                            <p class="big-p">
+                                One of the main additions to the sales website
+                                that we wanted to implement was a new section
+                                which allows users to navigate through
+                                informational landing pages categorised by
+                                popular cover-types. This would give users an
+                                alternate way obtain an initial quote while
+                                providing them contextual information required
+                                to make a decision, as well as giving us an
+                                opportunity to show them unique selling points
+                                and benefits they get from joining.
+                            </p>
+
+                            <p class="big-p">
+                                On each landing page we would offer users a
+                                faster way to obtain an initial quote by asking
+                                some required questions on the page itself. This
+                                is because we now understand the products the
+                                user is looking for, and are able to offer them
+                                recommendation. We could personalise the flow
+                                both for current and future visits. Our aim is
+                                to be able to ‘nudge’ the user through the steps
+                                of completing their quote funnel, with the
+                                ultimate aim of getting them to the summary
+                                pages and into the transactional process.
+                            </p>
+                        </div>
+                        <!--/ Text wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!--/ Wrapper (Small) -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Img Section -->
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper -->
+                <div class="wrapper">
+                    <!-- Column -->
+                    <div class="c-col-6">
+                        <!-- Image Wrapper -->
+                        <div class="image-wrapper">
+                            <img
+                                loading="lazy"
+                                src="images/folio/works/HCF/1a/Health_landing.webp"
+                                alt="Single Image"
+                            />
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="c-col-6">
+                        <!-- Image Wrapper -->
+                        <div class="image-wrapper">
+                            <img
+                                loading="lazy"
+                                src="images/folio/works/HCF/1a/FInd_Health_Couples_v2.webp"
+                                alt="Single Image"
+                            />
+                        </div>
+                        <!--/ Image Wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!-- Wrapper -->
+            </div>
+            <!--/ Section -->
+
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper (Small) -->
+                <div class="wrapper-small" style="margin-bottom: 0">
+                    <!-- Column -->
+                    <div class="c-col-12" style="margin-bottom: 0px">
+                        <!-- Text wrapper -->
+                        <div class="text-wrapper" style="margin-bottom: 80px">
+                            <div class="caption has-animation skew-up">
+                                <!--copy here -->
+                            </div>
+
+                            <h3
+                                style="
+                                    line-height: 1.3;
+                                    margin-top: 2.4rem;
+                                    margin-bottom: 1.3rem;
+                                    font-size: 28px;
+                                    font-weight: 400;
+                                    color: #51284f;
+                                "
+                            >
+                                Get help / FAQs
+                            </h3>
+                            <p class="big-p">
+                                Health insurance is a complicated and at times
+                                overwhelming product choice and although our
+                                overall plan was to minimise the content to what
+                                is most important to get the user to next steps,
+                                it's important for users in this journey to also
+                                have a way to access further information that
+                                they may be curious about that is not presented
+                                directly on the information pages, letting the
+                                user understand the process or products in
+                                greater detail to further inform their decision
+                            </p>
+                        </div>
+                        <!--/ Text wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!--/ Wrapper (Small) -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Img Section -->
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper -->
+                <div class="wrapper">
+                    <!-- Column -->
+                    <div class="c-col-6">
+                        <!-- Image Wrapper -->
+                        <div class="image-wrapper">
+                            <img
+                                loading="lazy"
+                                src="images/folio/works/HCF/1a/Get_help.jpg"
+                                alt="Single Image"
+                            />
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="c-col-6">
+                        <!-- Image Wrapper -->
+                        <div class="image-wrapper">
+                            <img
+                                loading="lazy"
+                                src="images/folio/works/HCF/1a/FAQ.jpg"
+                                alt="Single Image"
+                            />
+                        </div>
+                        <!--/ Image Wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!-- Wrapper -->
+            </div>
+            <!--/ Section -->
+
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper (Small) -->
+                <div class="wrapper-small" style="margin-bottom: 0">
+                    <!-- Column -->
+                    <div class="c-col-12" style="margin-bottom: 0px">
+                        <!-- Text wrapper -->
+                        <div class="text-wrapper" style="margin-bottom: 80px">
+                            <div class="caption has-animation skew-up">
+                                <!--copy here -->
+                            </div>
+
+                            <p class="big-p">
+                                The previous state where the FAQs were situated
+                                in many different sections of the site without a
+                                central repository was problematic both for
+                                user's usage of the site, and SEO as well. We
+                                consolidated the huge amount of content in the
+                                FAQs to a single page or section which is
+                                designed dynamically so that the content will
+                                change according to the in-page navigation on
+                                the left. This allowed us to retain the massive
+                                amounts of copy required for this section, while
+                                making it much more user and SEO-friendly while
+                                giving the business a baseline for how the FAQs
+                                should be approached for their other products.
+                            </p>
+                        </div>
+                        <!--/ Text wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!--/ Wrapper (Small) -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Section -->
+            <div class="section" style="margin-bottom: 0" id="1b">
+                <!-- Wrapper (Small) -->
+                <div class="wrapper-small" style="margin-bottom: 0">
+                    <!-- Column -->
+                    <div class="c-col-12" style="margin-bottom: 0px">
+                        <!-- Text wrapper -->
+                        <div class="text-wrapper" style="margin-bottom: 80px">
+                            <div class="caption has-animation skew-up">
+                                <!--copy here -->
+                            </div>
+
+                            <h2 style="color: #51284f">
+                                Marketplace 1b - Transactional funnel discovery.
+                                strategy and UX
+                            </h2>
+                            <p class="big-p">
+                                With completion and launch of Marketplace stage
+                                1a, I was invlolved in leading the UX research
+                                discovery for 1b. This stage had the scope of
+                                enhancing the quote funnel experience by
+                                integrating a needs-based quiz and a product
+                                recommendation tool. This is a extensive step
+                                for the organisation as the vast majority of
+                                transactions at HCF move through these health
+                                products. We would design various paths into the
+                                funnnel such a direct path, objectives / needs
+                                based path and an information-led path (Find
+                                Health..).
+                            </p>
+
+                            <p class="big-p">
+                                Within the discovery stage of the project, we
+                                conducted 2 rounds of user testing and then
+                                competitive analysis to verify our understanding
+                                of what users wanted within these funnels and
+                                how we could simplify the experience for them
+                                while moving them through the funnel as quickly
+                                possible while redesigning the current weak
+                                points around the flow. This involved at first
+                                understanding the data behind user drop-off
+                                points and then rethinking and conducting user
+                                research around these key pages, while
+                                integrating them with the new dynamic tools
+                                which were now being built in the back-end.
+                            </p>
+                            <p class="big-p">
+                                At the end of the process, we understood exactly
+                                where the current experience was lacking in
+                                terms of upain points, and I was able to build a
+                                robust set of wireframe variations and working
+                                prototypes for a reimagined transactional flow
+                                experience. I believe that with this pre-work I
+                                set the team up for success as they tackle the
+                                UI elements of 1b, use qualitative testing to
+                                validate these decisions, and ultimately use the
+                                Design System that we newly created to integrate
+                                the new flow and prepare it for development.
+                            </p>
+                        </div>
+                        <!--/ Text wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!--/ Wrapper (Small) -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Img Section -->
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper -->
+                <div class="wrapper">
+                    <!-- Column -->
+                    <div class="c-col-12">
+                        <div class="image-wrapper">
+                            <img
+                                loading="lazy"
+                                src="images/folio/works/HCF/1b/MP_themes.png"
+                                alt="Single Image"
+                            />
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="c-col-6">
+                        <!-- Image Wrapper -->
+                        <div class="image-wrapper">
+                            <img
+                                loading="lazy"
+                                src="images/folio/works/HCF/1b/1b_HP.webp"
+                                alt="Single Image"
+                            />
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="c-col-6">
+                        <!-- Image Wrapper -->
+                        <div class="image-wrapper">
+                            <img
+                                loading="lazy"
+                                src="images/folio/works/HCF/1b/1b_Summary page.webp"
+                                alt="Single Image"
+                            />
+                        </div>
+                        <!--/ Image Wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!-- Wrapper -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Footer -->
+            <footer class="site-footer">
+                <!-- Fullwidth Wrapper -->
+                <div class="wrapper">
+                    <!-- Column -->
+                    <div class="c-col-12">
+                        <h1 class="thin" style="margin: 0">
+                            Want to get in touch? <br /><a
+                                class="underline"
+                                href="mailto:daniel@left-dial.com"
+                                >daniel@left-dial.com</a
+                            >
+                        </h1>
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!-- Fullwidth Wrapper -->
+
+                <!-- Fullwidth Wrapper -->
+                <div style="margin-bottom: 75px" class="wrapper-full">
+                    <div class="c-col-6 hide-mobile"></div>
+
+                    <!-- Column -->
+                    <div class="c-col-3 no-gap">
+                        <!-- <div class="caption">VISIT</div>
+                        <h5>
+                            32 Avenue of the Americas <br />New York, NY 10013
+                            <br />United States
+                        </h5> -->
+                    </div>
+                    <!--/ Column -->
+
+                    <!-- Column -->
+                    <div class="c-col-3 no-gap">
+                        <div class="caption">I'M ALSO HERE</div>
+
+                        <!-- Footer List -->
+                        <ul class="footer-list">
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/in/danielhandaru/"
+                                    target="_blank"
+                                    class="underline"
+                                    >Linkedin</a
+                                >
+                            </li>
+
+                            <li>
+                                <a
+                                    href="https://www.instagram.com/gridsanddots/?hl=en"
+                                    target="_blank"
+                                    class="underline"
+                                    >Instagram</a
+                                >
+                            </li>
+                            <li>
+                                <a href="index.html" class="underline"
+                                    >Go home</a
+                                >
+                            </li>
+                        </ul>
+                        <!-- Footer List -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!-- Fullwidth Wrapper -->
+            </footer>
+            <!--/ Footer -->
+        </div>
+        <!--/ Site Content -->
+
+        <script defer src="js/jquery.min.js"></script>
+        <script defer src="js/plugins.js"></script>
+        <script defer src="js/scripts.js"></script>
+        <script defer src="js/jquery.smoothState.js"></script>
+        <script defer src="js/page-transitions.js"></script>
+    </body>
+</html>

@@ -1,0 +1,418 @@
+/* ============================================================
+   Unified hover & focus system
+   ------------------------------------------------------------
+   One accent (--accent) drives every link / nav hover state.
+   Site-wide :focus-visible for keyboard accessibility.
+   Loaded LAST in <head> so it wins by source-order cascade.
+
+   Intentionally NOT touched (per project decision):
+   - .list-v2, .listv2-project, .listv2-wrapper, .project-image,
+     .lv2-images, .grid-project, .list-title, .horizontal-*,
+     .wall-project, .vertical-projects, .detailed-*, .big-slider*
+   None of the selectors below match showcase tiles, so the
+   homepage portfolio showcase behaviour is unaffected.
+   ============================================================ */
+
+:root {
+    --accent: #c4604a;
+    /* Light yellow marker for scroll-triggered text highlights — classic
+       highlighter feel at 35% alpha. Pairs with the half-height bar variant
+       (background-size …38%) so the gray body text (#6d6d6d) sits half on
+       plain page background and half on softened yellow — readable and
+       editorial rather than fluorescent. */
+    --highlight: rgba(255, 234, 89, 0.35);
+}
+
+@media (hover: hover) {
+
+    /* Body-copy text links explicitly marked with .underline.
+       This is the Cygni convention for "this is a link in body text". */
+    a.underline:hover {
+        color: var(--accent);
+    }
+
+    /* Light-layout variant of the above — overrides the existing
+       styles.css rule that hard-codes #121212 on light pages. */
+    .light a.underline:hover,
+    .layout-light a.underline:hover {
+        color: var(--accent);
+    }
+
+    /* Footer navigation variants. Replaces the per-page
+       inline #ede574 yellow and the styles.css #ededed off-white. */
+    .footer-nav li a:hover,
+    .footer-list li a:hover,
+    .footer-list a:hover,
+    .footer-menu li a:hover {
+        color: var(--accent);
+    }
+
+    /* Accordion titles (homepage "What do I do?", list page). */
+    .accordion-title:hover {
+        color: var(--accent);
+    }
+
+}
+
+/* ============================================================
+   Keyboard focus indicator — always on, regardless of hover.
+   Currently the site has zero visible focus state; this is a
+   quiet accessibility win.
+   ============================================================ */
+a:focus-visible,
+button:focus-visible,
+.accordion-title:focus-visible,
+.menu-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* ============================================================
+   h1.big-title entry animation — typographic "settle"
+   ------------------------------------------------------------
+   Overrides the generic .skew-up entry rule specifically for
+   h1.big-title. The headline lands at wider tracking, slightly
+   displaced, and dimmed — then "focuses" into its final position
+   as Locomotive Scroll adds .is-inview when it enters the viewport.
+   Same trigger mechanism the rest of the site already uses, so no
+   HTML or JS changes are needed.
+
+   Specificity (0,2,1) beats the original .skew-up rule (0,1,0),
+   and hover.css is loaded after styles.css as a belt-and-braces.
+   ============================================================ */
+
+h1.big-title.skew-up {
+    opacity: 0.25;
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+    letter-spacing: 0.04em;
+    -webkit-transition: opacity .9s cubic-bezier(.215, .61, .355, 1),
+                        -webkit-transform .9s cubic-bezier(.215, .61, .355, 1),
+                        letter-spacing .9s cubic-bezier(.215, .61, .355, 1);
+    -o-transition: opacity .9s cubic-bezier(.215, .61, .355, 1),
+                   transform .9s cubic-bezier(.215, .61, .355, 1),
+                   letter-spacing .9s cubic-bezier(.215, .61, .355, 1);
+    transition: opacity .9s cubic-bezier(.215, .61, .355, 1),
+                transform .9s cubic-bezier(.215, .61, .355, 1),
+                letter-spacing .9s cubic-bezier(.215, .61, .355, 1);
+}
+
+h1.big-title.skew-up.is-inview {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   Scroll-triggered text highlights — half-height marker
+   ------------------------------------------------------------
+   Apply <mark class="text-highlight">…</mark> (or any inline element
+   with .text-highlight) to highlight key phrases inside body copy.
+   The marker draws from left to right over ~1.1s once the element
+   enters the viewport.
+
+   Trigger class .is-inview is added by initTextHighlights() in
+   scripts.js (IntersectionObserver-based — independent of
+   Locomotive Scroll and splitLines).
+   ============================================================ */
+
+.text-highlight {
+    background-image: linear-gradient(120deg, var(--highlight) 0%, var(--highlight) 100%);
+    background-repeat: no-repeat;
+    background-size: 0% 38%;          /* width:0 = invisible; 38% = half-height bar */
+    background-position: 0 88%;       /* sit near the baseline like a marker */
+    padding: 0 .05em;
+    transition: background-size 1.1s cubic-bezier(.215, .61, .355, 1);
+}
+
+/* Reset the native <mark> yellow so only our linear-gradient shows */
+mark.text-highlight {
+    background-color: transparent;
+    color: inherit;
+}
+
+.text-highlight.is-inview {
+    background-size: 100% 38%;
+}
+
+/* Links wrapped inside a highlight inherit the body color, not the
+   default link blue / underline gray; the highlight visually marks
+   them already. */
+.text-highlight a {
+    color: inherit;
+}
+
+/* Hover state for links inside a scroll-triggered highlight
+   (e.g. "Grids & Dots" in the index bio). Deliberately OUTSIDE the
+   @media (hover: hover) block so it fires on every device, and
+   !important to defeat the inline a:hover { color: #ede574 } rule
+   in index.html's <style> block regardless of cascade ambiguity. */
+.text-highlight a:hover,
+.text-highlight a:focus-visible {
+    color: var(--accent) !important;
+}
+
+/* ============================================================
+   .project-title — Editorial New serif on case study pages
+   ------------------------------------------------------------
+   Case study landing pages (HCF_, CAANZ_, Ricoh_*, isuzu_, CG_,
+   Russell_, Chartered) use <div class="project-title"> as the
+   hero heading. By default it inherits Archivo sans from body.
+   This rule matches the font-family used by h1.big-title so the
+   editorial serif voice is consistent across the site.
+
+   Size, weight, and line-height stay as defined in style.css /
+   style2.css — only the typeface changes. index.html has no
+   .project-title element so is unaffected.
+   ============================================================ */
+
+.project-title {
+    font-family: 'Editorial New', 'Times New Roman', serif;
+}
+
+/* ============================================================
+   .button — outlined CTA with editorial hover (Option B)
+   ------------------------------------------------------------
+   Outlined rectangle that inherits brand color via currentColor,
+   so per-page inline style="color: #..." on each <a> drives the
+   border and text color without any per-page CSS rules.
+
+   Rest:  brand-color outline, brand-color text, transparent fill
+   Hover: faint brand-color tint behind text (via color-mix),
+          letter-spacing opens 0.04em → 0.06em,
+          whole button nudges 2px right (toward the › arrow that
+          some links carry in their copy).
+   Focus: same hover treatment plus a 2px brand outline ring for
+          keyboard navigation.
+
+   Loaded last in <head>, so it wins on source order over any
+   inline .button definition (e.g. HCF_.html had its own static
+   variant without a hover state — this fully replaces it).
+   ============================================================ */
+
+.button {
+    display: inline-block;
+    padding: 14px 28px;
+    background: transparent;
+    border: 1.5px solid currentColor;
+    border-radius: 4px;
+    /* !important defeats the per-page inline a { text-decoration: underline }
+       rule in HCF_/Ricoh_1_/etc that was bleeding through on hover */
+    text-decoration: none !important;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: background-color .3s ease, letter-spacing .3s ease, -webkit-transform .2s ease;
+    -o-transition: background-color .3s ease, letter-spacing .3s ease, transform .2s ease;
+    transition: background-color .3s ease, letter-spacing .3s ease, transform .2s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+    /* Fallback for browsers without color-mix (very rare in 2026) */
+    background-color: rgba(0, 0, 0, 0.05);
+    /* Brand-tinted overlay — 8% of the button's currentColor */
+    background-color: color-mix(in srgb, currentColor 8%, transparent);
+    letter-spacing: 0.06em;
+    text-decoration: none !important;
+    -webkit-transform: translateX(2px);
+    -ms-transform: translateX(2px);
+    transform: translateX(2px);
+}
+
+.button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+}
+
+/* ============================================================
+   .home-button — small HOME link in the header of landing pages
+   ------------------------------------------------------------
+   Positioned top-left of the site-navigation, mirroring the
+   menu-toggle on the right. Centralised here so every case study
+   inherits it without per-page CSS duplication.
+   ============================================================ */
+
+.home-button {
+    position: absolute;
+    left: 7vw;
+    /* Default: match the original .menu-toggle position from styles.css/style2.css
+       (top: 10vh). This handles HCF.html, CAANZ.html, CAANZ_.html which use that
+       toggle variant. */
+    top: 10vh;
+}
+
+/* On pages that override the menu toggle via the .new-menu variant
+   (CG_, HCF_, Ricoh_1_, Ricoh_2_, Russell_, Chartered, isuzu_), .new-menu
+   sits at top: 56px instead. Match it so the HOME link's top edge lines up
+   with the toggle's top edge regardless of which variant the page uses. */
+.site-navigation:has(.new-menu) .home-button {
+    top: 56px;
+}
+
+/* Hide the HOME link on mobile — the burger menu's "Home" item is enough,
+   and the absolute-positioned link tends to collide with the mobile header. */
+@media (max-width: 850px) {
+    .home-button {
+        display: none;
+    }
+}
+
+/* ============================================================
+   Sticky Spotify player — Grids & Dots
+   ------------------------------------------------------------
+   Fixed at the bottom of the viewport, hidden on initial load,
+   slides up after the user's first scroll. Injected by
+   initSpotifyPlayer() in scripts.js into <body> (outside #main),
+   so it persists across smoothState navigations and music keeps
+   playing as the user browses.
+   ============================================================ */
+
+.spotify-sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+    -webkit-transition: -webkit-transform .55s cubic-bezier(.215, .61, .355, 1);
+    -o-transition: transform .55s cubic-bezier(.215, .61, .355, 1);
+    transition: transform .55s cubic-bezier(.215, .61, .355, 1);
+    background: #121212;
+    pointer-events: none;
+}
+
+.spotify-sticky.spotify-sticky-in {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.spotify-sticky iframe {
+    display: block;
+    width: 100%;
+    height: 80px;
+    border: 0;
+}
+
+.spotify-sticky-close {
+    position: absolute;
+    top: -26px;
+    right: 16px;
+    width: 32px;
+    height: 26px;
+    background: #121212;
+    color: #ededed;
+    border: 0;
+    border-radius: 4px 4px 0 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0;
+    -webkit-transition: opacity .3s ease, background-color .2s ease;
+    -o-transition: opacity .3s ease, background-color .2s ease;
+    transition: opacity .3s ease, background-color .2s ease;
+}
+
+.spotify-sticky.spotify-sticky-in .spotify-sticky-close {
+    opacity: 1;
+    -webkit-transition-delay: .4s, 0s;
+    -o-transition-delay: .4s, 0s;
+    transition-delay: .4s, 0s;
+}
+
+.spotify-sticky-close:hover,
+.spotify-sticky-close:focus-visible {
+    background: var(--accent);
+    outline: none;
+}
+
+/* Hide on mobile — the player is desktop-only. JS in scripts.js also
+   gates the initial mount on viewport width; this rule handles the edge
+   case where someone resizes from desktop down to mobile after mount. */
+@media (max-width: 850px) {
+    .spotify-sticky {
+        display: none;
+    }
+}
+
+/* ============================================================
+   Mobile: undo splitLines forced line breaks
+   ------------------------------------------------------------
+   The splitLines plugin in scripts.js measures the bio paragraph at
+   the initial viewport width and wraps each visible line in its own
+   <div>. Those divs are block-level, so on a narrower mobile viewport
+   the browser is forced to honour the desktop line breaks AND wrap
+   again for the smaller width — producing the awkward zig-zag breaks.
+   On mobile we drop the wrappers to display:inline so the browser
+   can reflow text naturally. The trade-off is no per-line entrance
+   animation on mobile, which is the right call: readable text > a
+   line-by-line animation effect most mobile users won't notice anyway.
+   ============================================================ */
+@media (max-width: 850px) {
+    .lines-up div,
+    .lines-down div,
+    .lines-fade-up div,
+    .lines-fade-down div,
+    .lines-up .split-line,
+    .lines-down .split-line,
+    .lines-fade-up .split-line,
+    .lines-fade-down .split-line {
+        display: inline;
+        overflow: visible;
+    }
+}
+
+/* Match the link styling used on CG_.html — gray with underline — so the
+   HOME link looks identical across every case study, regardless of whether
+   each page's inline <style> block sets a base `a {}` rule or not.
+   (HCF_, HCF, CAANZ_, CAANZ, isuzu_ don't have a base rule, so their <a>
+   was falling back to the browser-default blue underlined link.) */
+.home-button a {
+    color: #6d6d6d;
+    text-decoration: underline;
+}
+
+/* Defeat the inline a:hover { color: #ede574 } yellow on case study
+   pages — the HOME link should follow the unified accent on hover. */
+.home-button a:hover,
+.home-button a:focus-visible {
+    color: var(--accent) !important;
+}
+
+/* ============================================================
+   Mobile: hide the desktop hover-image previews in the
+   portfolio showcase on index.html
+   ------------------------------------------------------------
+   On desktop, .listv2-project hover swaps in a fixed-width
+   image (700px via .folioImg, 600px via .folioImgSm). On
+   mobile the fixed widths either overflow the viewport or
+   sit awkwardly tiny — and the hover-to-preview pattern
+   doesn't translate to touch anyway. The tappable tile +
+   title in the list is sufficient navigation on phones.
+   ============================================================ */
+@media (max-width: 850px) {
+    .lv2-images,
+    .listv2-wrapper .lv2-images {
+        display: none;
+    }
+    /* Belt-and-braces: also reset the desktop !important widths
+       in case anything inside the showcase is still rendered. */
+    .folioImg,
+    .folioImgSm {
+        width: auto !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+    }
+}

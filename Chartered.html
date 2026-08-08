@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Page Title -->
+        <title>Chartered Accountants ANZ — End-to-End UX | Left Dial</title>
+        <!--/ Page Title -->
+
+        <meta name="author" content="Daniel Handaru" />
+        <meta name="description" content="End-to-end UX/UI redesign for Chartered Accountants Australia and New Zealand — user flows, member experience and the institute's digital presence." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link
+            href="https://fonts.googleapis.com/css?family=Archivo:400,500,600,700&display=swap"
+            rel="stylesheet"
+        />
+        <link href="style2.css" rel="stylesheet" />
+
+        <link href="css/plugins.css" rel="stylesheet" />
+        <link href="css/entypo.css" rel="stylesheet" />
+
+
+
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="images/folio/favicons/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            href="images/folio/favicons/favicon_2.ico"
+        />
+        <!--/ Favicons -->
+
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+
+            .project-header {
+                margin-bottom: 0;
+            }
+
+            .project-title {
+                color:#00b2e3;
+            }
+            /* .inLinks {
+                margin-bottom: 40px;
+            } */
+            .inLinks a {
+                text-decoration: none;
+                color: #cf142b;
+            }
+
+            .inLinks a.underline::before {
+                background: #cf142b;
+            }
+
+            a {
+                color: #6d6d6d;
+                text-decoration: underline;
+            }
+
+            a.underline:hover {
+                color: #ede574;
+            }
+
+            a:hover {
+                color: #ede574;
+            }
+            a.underline:hover {
+                color: #ede574;
+            }
+
+            .footer-list li a:hover {
+                color: #ede574;
+            }
+            p {
+                font-size: 18px;
+                line-height: 1.3;
+            }
+
+            /* p.big-p {
+                color: #928b8b;
+            } */
+            p.big-p {
+                color: #6d6d6d;
+            }
+
+            h2 { color: #00b2e3;
+            }
+            h3 {
+                line-height: 1.3;
+                margin-top: 2.4rem;
+                margin-bottom: 1.3rem;
+                font-size: 28px;
+                font-weight: 400;
+            }
+
+            ul {
+                margin-left: 20px;
+            }
+            li {
+                padding-bottom: 20px;
+                font-size: 18px;
+                line-height: 1.6;
+                color: #6d6d6d;
+                list-style-type: square;
+            }
+            li::marker {
+                color: #e0004d;
+            }
+
+            .new-menu {
+                position: absolute;
+                    right: 7vw;
+                    cursor: pointer;
+                    top: 56px;
+                    -webkit-transition: all 0.3s;
+                    -o-transition: all 0.3s;
+                    transition: all 0.3s;
+                    -webkit-transform-origin: center center;
+                    -ms-transform-origin: center center;
+                    transform-origin: center center;
+                    z-index: 113;
+                    width: 35px;
+                    height: 35px;
+            }
+
+            .toggle-lineB {
+                display: block;
+                height: 2px;
+                width: 35px;
+                background: #000;
+                margin-bottom: 5px;
+                margin-left: auto;
+                margin-right: auto;}
+
+            .toggle-line-in {visibility: hidden;}
+            .is-active .toggle-line-in {visibility: visible;}
+
+            footer a {
+                text-decoration: none;
+            }
+
+
+            @media (max-width: 1250px) {
+                .hide {display: none;}
+
+                p.big-p {
+                    font-size: 20px;
+                }
+            }
+            @media only screen and (max-width: 850px) {
+                .project-header .project-image {
+                    height: 30vh;
+                }
+
+            }
+
+
+        </style>
+        <link href="css/hover.css" rel="stylesheet" />
+        </head>
+
+
+
+    <body>
+        <!-- Loading Text -->
+        <div class="loading-text">Loading</div>
+        <!-- Loading Text -->
+
+        <!-- Lines (Don't Touch) -->
+        <div class="lines"></div>
+        <!-- /Lines -->
+
+        <!-- Page Loader -->
+        <div class="cygni-loader">
+            <div class="counter" data-count="99">00</div>
+        </div>
+        <!-- /Page Loader -->
+
+        <!-- Overlays (Don't Touch) -->
+        <div class="overlays"></div>
+        <!-- /Overlays -->
+
+        <!-- Header -->
+        <header class="site-header">
+            <!-- Branding -->
+            <!-- <div class="site-branding">
+                <img loading="lazy"
+                    class="dark-logo"
+                    src="images/cygni-logo.png"
+                    alt="Site Logo"
+                />
+                <img loading="lazy"
+                    class="light-logo"
+                    src="images/cygni-logo-light.png"
+                    alt="Site Light Logo"
+                />
+            </div> -->
+            <!-- /Branding -->
+
+            <!-- Menu -->
+            <div class="site-navigation project-page">
+                <div class="home-button"><a href="index.html">HOME</a></div>
+
+                <div class="new-menu menu-toggle">
+                    <span class="toggle-lineB toggle-line-1"></span>
+                    <span class="toggle-lineB toggle-line-2"></span>
+                    <span class="hide">CONTACT</span>
+                </div>
+
+                <!-- Menu Overlays (Don't Touch) -->
+                <div class="menu-overlays"></div>
+                <!-- Menu Overlays -->
+
+                <div class="menu-wrapper">
+                    <!-- Navigation -->
+                    <ul class="menu">
+                        <!-- Main Menu -->
+                        <li class="menu-item">
+                            <a href="https://left-dial.com/">Home</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="HCF_.html">HCF</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="isuzu_.html">Isuzu</a>
+                        </li>
+                        <li class="menu-item menu-active-item">
+                            <a href="Chartered.html">CAANZ</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="Ricoh_1_.html">Ricoh</a>
+                        </li>
+                        <!-- /Main Menu -->
+                    </ul>
+                    <!-- /Navigation -->
+                </div>
+
+                <!-- Menu Widget (Left) -->
+                <div class="menu-widget-wrapper mww-1">
+                    <div class="menu-widget">
+                        <div class="menu-widget-title">WORK TOGETHER</div>
+
+                        <a href="mailto:daniel@left-dial.com"
+                            >daniel@left-dial.com</a
+                        >
+                    </div>
+                </div>
+                <!--/ Menu Widget (Left) -->
+
+                <!-- Menu Widget (Middle) -->
+                <div class="menu-widget-wrapper mww-2">
+                    <div class="scrolling-button">
+                        <a
+                            href="https://www.instagram.com/gridsanddots/?hl=en"
+                            target="_blank"
+                            >Grids & Dots</a
+                        >
+                    </div>
+                </div>
+                <!--/ Menu Widget (Middle) -->
+
+                <!-- Menu Widget (Right -->
+                <div class="menu-widget-wrapper mww-3">
+                    <div class="menu-widget">
+                        <ul class="widget-socials">
+                            <li>
+                                <a href="mailto:daniel@left-dial.com">mail</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/in/danielhandaru/"
+                                    target="_blank"
+                                    >linkedin</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.instagram.com/lonely_dot_photos"
+                                    target="_blank"
+                                    >instagram</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://open.spotify.com/artist/7ba827SJSUU4l3AORy4Doy"
+                                    target="_blank"
+                                    >spotify</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--/ Menu Widget (Right) -->
+            </div>
+            <!-- /Menu -->
+        </header>
+        <!-- /Header -->
+
+        <!-- Site Content -->
+        <div id="main" class="content">
+            <div
+                class="page-settings"
+                data-layout="light"
+                data-header-style="dark"
+                data-menu-layout="dark"
+                data-background="#fff"
+            ></div>
+
+            <!-- Single Project -->
+            <div class="single-project">
+                <!-- Project Header -->
+                <div class="project-header">
+                    <!-- Project Image -->
+                    <div class="project-image">
+                        <!-- <img loading="lazy"
+                            src="images/projects/fleava/sp_head.jpg"
+                            alt="Project Header Image"
+                        /> -->
+                    </div>
+                    <!--/ Project Image -->
+
+                    <div class="project-top">
+                        <!-- Project Category -->
+                        <div
+
+                            class="project-work has-animation skew-down"
+                        >
+                            product design
+                        </div>
+                        <!-- Project Category -->
+
+                        <!-- Project Title -->
+                        <div class="project-title" style=" color: #00b2e3;">
+                            Chartered Accountants
+                        </div>
+
+                        <!-- Project Title -->
+                    </div>
+
+                    <!-- Project Metas -->
+                    <div class="project-meta">
+                        <div>
+                            <span class="pm-tit">Client: </span>Chartered
+                            Accountants ANZ
+                        </div>
+
+                        <div>
+                            <span class="pm-tit">Project: </span>Dashboard &
+                            Workflow
+                        </div>
+
+                        <div>
+                            <span class="pm-tit">Role: </span>End-to-end User
+                            Experience
+                        </div>
+                    </div>
+                    <!-- Project Metas -->
+                    <!-- Project Summary -->
+                    <div
+                        data-delay="1"
+                        class="project-summary"
+                    >
+                        Chartered Accountants needed help creating and designing
+                        a system for their vast network of internal staff to track,
+                        request and update new products and activities from what
+                        was previously a convoluted (almost non-existent)
+                        internal system. This dashboard would also serve as an analytics and goal platform that would reinvent their business processes.
+                    </div>
+                    <!-- Project Summary -->
+                </div>
+                <!--/ Project Header -->
+
+                <!-- Page Settings -->
+                <!-- <div
+                class="page-settings"
+                data-layout="light"
+                data-header-style="dark"
+                data-menu-layout="dark"
+                data-background="#f5f5f5"
+            ></div> -->
+                <!-- Page Settings -->
+
+                <!-- Project Content -->
+                <div class="project-content">
+                    <!-- Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper (Small) -->
+                        <div class="wrapper-small" style="margin-bottom: 0">
+                            <!-- Column -->
+                            <div class="c-col-12" style="margin-bottom: 0px">
+                                <!-- Text wrapper -->
+                                <div
+                                    class="text-wrapper"
+                                    style="margin-bottom: 80px"
+                                >
+
+
+                                     <h2 style="color: #00b2e3;">
+                                    CAANZ Authenticated Portal &
+                                    Dashboard
+                                     </h2>
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        Through working with the Codehouse
+                                        group, I was placed on a large project
+                                        to work with Chartered Accountants
+                                        product owners to workshop, strategise
+                                        and then design an intranet to help
+                                        organise their internal product
+                                        workflows which at the time were
+                                        somewhat chaotic and causing a lot
+                                        problems for the business.
+                                    </p>
+
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        The first part of the process was really
+                                        to understand from the client who this
+                                        workflow is for, what will the persona /
+                                        user types be, and what they need to
+                                        access in order to complete what they
+                                        need to do and consider in order to have
+                                        new products and items approved for the
+                                        business and ultimately go live on the
+                                        website.
+                                    </p>
+
+                                    <p class="big-p">
+                                        I created extensive user journeys and
+                                    mind maps for each persona or employee
+                                    type who would need to use the intranet,
+                                    as seen below. This process was needed
+                                    in order to understand what, why and who
+                                    was this project aimed at. What we found
+                                    was that there were two main personas to
+                                    design for - the Requestor and the
+                                    Approver. There were also a couple of
+                                    other user types who would need to
+                                    access the dashboard, but we would
+                                    design for the more complex workflows
+                                    first, which are presented below.
+                                    </p>
+
+                                    <p class="big-p">
+                                        It was also essential to understand which
+                                        functionalities were required for each
+                                        dashboard - to show the users active
+                                        products, active activities as well
+                                        aspending items, company-wide search and
+                                        resources. This was on top of the
+                                        workflows attached to creating and
+                                        updating new items.
+
+                                    </p>
+
+                                </div>
+                                <!--/ Text wrapper -->
+                            </div>
+                            <!--/ Column -->
+
+                        </div>
+                        <!--/ Wrapper (Small) -->
+                    </div>
+                    <!--/ Section -->
+
+                    <!-- Img Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper -->
+                        <div class="wrapper">
+                            <!-- Column -->
+                            <div class="c-col-12">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img loading="lazy"
+                                        src="images/folio/works/CAANZ/Product-hierarchy-map.jpg"
+                                        alt="Single Image"
+                                    />
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Wrapper -->
+                    </div>
+                    <!--/ Section -->
+                    <!-- Img Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper -->
+                        <div class="wrapper">
+                            <!-- Column -->
+                            <div class="c-col-12">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img loading="lazy"
+                                        src="images/folio/works/CAANZ/User-flows.jpg"
+                                        alt="Single Image"
+                                    />
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Wrapper -->
+                    </div>
+                    <!--/ Section -->
+
+
+
+
+                    <!-- Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper (Small) -->
+                        <div class="wrapper-small" style="margin-bottom: 0">
+                            <!-- Column -->
+                            <div class="c-col-12" style="margin-bottom: 0px">
+                                <!-- Text wrapper -->
+                                <div
+                                    class="text-wrapper"
+                                    style="margin-bottom: 80px"
+                                >
+                                    <div class="caption has-animation skew-up">
+                                        <!--copy here -->
+                                    </div>
+
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        After the initial research, I presented
+                                        the idea of designing a personalised
+                                        user dashboard which had a workflow
+                                        attached of a number of multi-step forms
+                                        to help the user complete their
+                                        designated product workflow. The huge
+                                        challenge for this project was to design
+                                        an easy-to-use process out of what over
+                                        the years had become quite a convoluted
+                                        and difficult to follow workflow.
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        As well as being a workflow dashboard, I
+                                        presented the idea that the landing page
+                                        could also tie into the analytics engine
+                                        of the CMS they are using, and so could
+                                        also present important data collected
+                                        relating to the products they own as
+                                        well company-wise products. The client
+                                        loved these ideas when presented to them
+                                        in low-fidelity wireframes.
+                                    </p>
+                                </div>
+                                <!--/ Text wrapper -->
+                            </div>
+                            <!--/ Column -->
+                        </div>
+                        <!--/ Wrapper (Small) -->
+                    </div>
+                    <!--/ Section -->
+
+
+
+                    <!-- Img Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper -->
+                        <div class="wrapper">
+                            <!-- Column -->
+                            <div class="c-col-6">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img loading="lazy"
+                                        src="images/folio/works/CAANZ/WF Dashboard Analytics.jpg"
+                                        alt="Single Image"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Column -->
+                            <div class="c-col-6">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img loading="lazy"
+                                        src="images/folio/works/CAANZ/WF Edit product.jpg"
+                                        alt="Single Image"
+                                    />
+
+                            </div>
+                        <!--/ Column -->
+                        </div>
+                    <!-- Wrapper -->
+                    </div>
+                <!--/ Section -->
+
+                <!-- Section -->
+                <div class="section" style="margin-bottom: 0">
+                    <!-- Wrapper (Small) -->
+                    <div class="wrapper-small" style="margin-bottom: 0">
+                        <!-- Column -->
+                        <div class="c-col-12" style="margin-bottom: 0px">
+                            <!-- Text wrapper -->
+                            <div
+                                class="text-wrapper"
+                                style="margin-bottom: 80px"
+                            >
+
+                                <p
+
+                                    class="big-p"
+                                >
+                                    After getting sign off and business
+                                    approval on the initial wireframes, it
+                                    was a time to do some more research into
+                                    what was probably the most improtant
+                                    part of the intranet in the forms
+                                    themselves. As the initial research
+                                    suggested that these were quite likely
+                                    to be quite long and complicated forms
+                                    involving a lot of approvals from
+                                    various stakeholders, I decided that the
+                                    best way to present them would be as
+                                    multi-step form modals with the workflow
+                                    broken up into manageable parts rather
+                                    than presented all at once to the user
+                                    which may be overwhelming.
+                                <p
+
+                                    class="big-p"
+                                >
+                                    It was also really important at this
+                                    stage to talk to the developers assigned
+                                    to the project about the technicalities
+                                    / possibilities of having elements
+                                    included like a status bar to show the
+                                    user how far they have progressed in the
+                                    workflow and auto-save functions to
+                                    allow to the user to come back later to
+                                    the workflow if required.
+                                </p>
+
+                                <p class="big-p">
+                                    An interesting challenge at this stage
+                                    was that there were two main workflows
+                                    here - for products and then for
+                                    activties. However, the two were
+                                    intertwined in that you needed to create
+                                    a product before you could plan
+                                    activities for it. Then also the user
+                                    needed to be able to update live and
+                                    pending activities and request access to
+                                    find, view and edit other users items.
+                                </p>
+
+                            <!--/ Text wrapper -->
+                        </div>
+                        <!--/ Column -->
+                    </div>
+                    <!--/ Wrapper (Small) -->
+                </div>
+                <!--/ Section -->
+
+                <!-- Img Section -->
+                <div class="section" style="margin-bottom: 120px;">
+                    <!-- Wrapper -->
+                    <div class="wrapper">
+                        <!-- Column -->
+                        <div class="c-col-6">
+                            <!-- Image Wrapper -->
+                            <div class="image-wrapper">
+                                <img loading="lazy"
+                                    src="images/folio/works/CAANZ/Form 1.png"
+                                    alt="Single Image"
+                                />
+                            </div>
+                        </div>
+                        <!-- Column -->
+                        <div class="c-col-6">
+                            <!-- Image Wrapper -->
+                            <div class="image-wrapper">
+                                <img loading="lazy"
+                                    src="images/folio/works/CAANZ/Form 2.png"
+                                    alt="Single Image"
+                                />
+
+                        </div>
+                    <!--/ Column -->
+                    </div>
+                <!-- Wrapper -->
+                </div>
+            <!--/ Section -->
+
+            <!-- Section -->
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper (Small) -->
+                <div class="wrapper-small" style="margin-bottom: 0">
+                    <!-- Column -->
+                    <div class="c-col-12" style="margin-bottom: 0px">
+                        <!-- Text wrapper -->
+                        <div
+                            class="text-wrapper"
+                            style="margin-bottom: 80px"
+                        >
+
+                            <p
+
+                                class="big-p"
+                            >
+                                After a lot of practice user
+                                interactions and stakeholder reviews, we
+                                reworked, rethought and updated the
+                                design flow to roll out a minimal,
+                                attractive, informative and user
+                                friendly system for the employees of
+                                CAANZ to finally have a
+                                business-approved workflow of creating,
+                                updating and keeping track of live
+                                products within their various teams.
+                            <p
+
+                                class="big-p"
+                            >
+                                As a business who were yet to fully take
+                                advantage of digital products and
+                                analytics, CAANZ were ecstatic with the
+                                results. A future phase two would
+                                include more integration with website
+                                analytics and an ability to update the
+                                product pages of CMS directly from a new
+                                workflow on the dashboard.
+                            </p>
+
+
+
+                        <!--/ Text wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!--/ Wrapper (Small) -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Img Section -->
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper -->
+                <div class="wrapper">
+                    <!-- Column -->
+                    <div class="c-col-12">
+                        <!-- Image Wrapper -->
+                        <div class="image-wrapper">
+                            <img loading="lazy"
+                                src="images/folio/works/CAANZ/overall.webp"
+                                alt="Single Image"
+                            />
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Wrapper -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Img Section -->
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper -->
+                <div class="wrapper">
+                    <!-- Column -->
+                    <div class="c-col-6">
+                        <!-- Image Wrapper -->
+                        <div class="image-wrapper">
+                            <img loading="lazy"
+                                src="images/folio/works/CAANZ/Login screen.jpg"
+                                alt="Single Image"
+                            />
+                        </div>
+                    </div>
+                    <div class="c-col-6">
+                        <!-- Image Wrapper -->
+                        <div class="image-wrapper">
+                            <img loading="lazy"
+                                src="images/folio/works/CAANZ/Dashboard_full.png"
+                                alt="Single Image"
+                            />
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Wrapper -->
+            </div>
+            <!--/ Section -->
+
+
+
+
+
+            <!-- Footer -->
+            <footer class="site-footer">
+                <!-- Fullwidth Wrapper -->
+                <div class="wrapper">
+                    <!-- Column -->
+                    <div class="c-col-12">
+                        <h1 class="thin" style="margin: 0">
+                            Want to get in touch? <br /><a
+                                class="underline"
+                                href="mailto:daniel@left-dial.com"
+                                >daniel@left-dial.com</a
+                            >
+                        </h1>
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!-- Fullwidth Wrapper -->
+
+                <!-- Fullwidth Wrapper -->
+                <div style="margin-bottom: 75px" class="wrapper-full">
+                    <div class="c-col-6 hide-mobile"></div>
+
+                    <!-- Column -->
+                    <div class="c-col-3 no-gap">
+                        <!-- <div class="caption">VISIT</div>
+                        <h5>
+                            32 Avenue of the Americas <br />New York, NY 10013
+                            <br />United States
+                        </h5> -->
+                    </div>
+                    <!--/ Column -->
+
+                    <!-- Column -->
+                    <div class="c-col-3 no-gap">
+                        <div class="caption">I'M ALSO HERE</div>
+
+                        <!-- Footer List -->
+                        <ul class="footer-list">
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/in/danielhandaru/"
+                                    target="_blank"
+                                    class="underline"
+                                    >Linkedin</a
+                                >
+                            </li>
+
+                            <li>
+                                <a
+                                    href="https://www.instagram.com/gridsanddots/?hl=en"
+                                    target="_blank"
+                                    class="underline"
+                                    >Instagram</a
+                                >
+                            </li>
+                            <li>
+                                <a href="index.html" class="underline"
+                                    >Go home</a
+                                >
+                            </li>
+                        </ul>
+                        <!-- Footer List -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!-- Fullwidth Wrapper -->
+            </footer>
+            <!--/ Footer -->
+        </div>
+        <!--/ Site Content -->
+
+        <script defer src="js/jquery.min.js"></script>
+        <script defer src="js/plugins.js"></script>
+        <script defer src="js/scripts.js"></script>
+        <script defer src="js/jquery.smoothState.js"></script>
+        <script defer src="js/page-transitions.js"></script>
+    </body>
+</html>

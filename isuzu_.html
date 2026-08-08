@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Page Title -->
+        <title>Isuzu Ute Australia — Product Design | Left Dial</title>
+        <!--/ Page Title -->
+
+        <meta name="author" content="Daniel Handaru" />
+        <meta name="description" content="End-to-end UX for Isuzu Ute Australia. D-Max and M-Max marketing refresh — modern visual tools that nudge customers toward online enquiries and purchases." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link
+            href="https://fonts.googleapis.com/css?family=Archivo:400,500,600,700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link href="css/plugins.css" rel="stylesheet" />
+        <link href="css/entypo.css" rel="stylesheet" />
+
+        <link href="style2.css" rel="stylesheet" />
+
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="images/folio/favicons/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            href="images/folio/favicons/favicon_2.ico"
+        />
+        <!--/ Favicons -->
+
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+            .project-title {color: red;}
+            .project-header {
+                margin-bottom: 0;
+            }
+            /* .inLinks {
+                margin-bottom: 40px;
+            } */
+
+            .loading-text.page-change {
+                opacity: 1;
+                visibility: hidden !important;
+            }
+            .inLinks a {
+                /* text-decoration: underline; */
+                color: #C21302;
+            }
+
+            .inLinks a.underline::before {
+                background: #C21302;
+            }
+            .menu-widget a {
+                color: #6d6d6d;
+            }
+            a:hover {
+                color: #ede574;
+            }
+            a.underline:hover {
+                color: #ede574;
+            }
+
+            footer a.underline {color: #999;}
+            footer a.underline::before { background: #999;}
+
+            .footer-list li a:hover {
+                color: #ede574;
+            }
+
+            .button {
+                display: block;
+                    width: auto;
+                    height: auto;
+                    background: none;
+                    padding: 10px;
+                    text-align: center;
+                    border-radius: 5px;
+                    color: #C21302;
+                    font-weight: bold;
+                    line-height: 18px;
+                    font-size: 14px;
+                    /* outline-color: red; */
+                    border: 2px solid #C21302;
+            }
+            p {
+                font-size: 18px;
+                line-height: 1.3;
+            }
+
+            /* p.big-p {
+                color: #928b8b;
+            } */
+            p.big-p {
+                color: #6d6d6d;
+            }
+
+            h2 { color: #C21302;
+            }
+            h3 {
+                line-height: 1.3;
+                margin-top: 2.4rem;
+                margin-bottom: 1.3rem;
+                font-size: 28px;
+                font-weight: 400;
+            }
+
+            ul {
+                margin-left: 20px;
+            }
+            li {
+                padding-bottom: 20px !important;
+                font-size: 18px !important;
+                line-height: 1.6 !important;
+                color: #6d6d6d !important;
+                list-style-type: square !important;
+            }
+            li::marker {
+                color: #e0004d;
+            }
+
+            .new-menu {
+                position: absolute;
+                    right: 7vw;
+                    cursor: pointer;
+                    top: 56px;
+                    -webkit-transition: all 0.3s;
+                    -o-transition: all 0.3s;
+                    transition: all 0.3s;
+                    -webkit-transform-origin: center center;
+                    -ms-transform-origin: center center;
+                    transform-origin: center center;
+                    z-index: 113;
+                    width: 35px;
+                    height: 35px;
+            }
+
+            .toggle-lineB {
+                display: block;
+                height: 2px;
+                width: 35px;
+                background: #000;
+                margin-bottom: 5px;
+                margin-left: auto;
+                margin-right: auto;}
+
+            .toggle-line-in {visibility: hidden;}
+            .is-active .toggle-line-in {visibility: visible;}
+
+
+            @media (max-width: 1250px) {
+                .hide {display: none;}
+
+                p.big-p {
+                    font-size: 20px;
+                }
+            }
+            @media only screen and (max-width: 850px) {
+                .project-header .project-image {
+                    height: 30vh;
+                }
+                .mobTop {margin-top: 40px;}
+            }
+        </style>
+        <link href="css/hover.css" rel="stylesheet" />
+        </head>
+
+
+
+    <body>
+        <!-- Loading Text -->
+        <div class="loading-text">Loading</div>
+        <!-- Loading Text -->
+
+        <!-- Lines (Don't Touch) -->
+        <div class="lines"></div>
+        <!-- /Lines -->
+
+        <!-- Page Loader -->
+        <div class="cygni-loader">
+            <div class="counter" data-count="99">00</div>
+        </div>
+        <!-- /Page Loader -->
+
+        <!-- Overlays (Don't Touch) -->
+        <div class="overlays"></div>
+        <!-- /Overlays -->
+
+        <!-- Header -->
+        <header class="site-header">
+            <!-- Branding -->
+            <!-- <div class="site-branding">
+                <img loading="lazy"
+                    class="dark-logo"
+                    src="images/cygni-logo.png"
+                    alt="Site Logo"
+                />
+                <img loading="lazy"
+                    class="light-logo"
+                    src="images/cygni-logo-light.png"
+                    alt="Site Light Logo"
+                />
+            </div> -->
+            <!-- /Branding -->
+
+            <!-- Menu -->
+            <div class="site-navigation">
+                <div class="home-button"><a href="index.html">HOME</a></div>
+                <!-- Menu Toggle (Don't Touch) -->
+                <!-- <div class="menu-toggle"><span class="hide">CONTACT ME</span></div> -->
+                <!-- /Menu Toggle -->
+
+                <!-- Menu Overlays (Don't Touch) -->
+                <div class="menu-overlays"></div>
+                <!-- Menu Overlays -->
+
+                <div class="new-menu menu-toggle">
+                    <span class="toggle-lineB toggle-line-1"></span>
+                    <span class="toggle-lineB toggle-line-2"></span>
+                    <span class="hide">CONTACT</span>
+                </div>
+
+                <div class="menu-wrapper">
+                    <!-- Navigation -->
+                    <ul class="menu">
+                        <!-- Main Menu -->
+                        <li class="menu-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="HCF_.html">HCF</a>
+                        </li>
+                        <li class="menu-item menu-item-active">
+                            <a href="isuzu_.html">Isuzu</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="Chartered.html">CAANZ</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="Ricoh_1_.html">Ricoh</a>
+                        </li>
+                        <!-- /Main Menu -->
+                    </ul>
+                    <!-- /Navigation -->
+                </div>
+
+                <!-- Menu Widget (Left) -->
+                <div class="menu-widget-wrapper mww-1">
+                    <div class="menu-widget">
+                        <div class="menu-widget-title">WORK TOGETHER</div>
+
+                        <a href="mailto:daniel@left-dial.com"
+                            >daniel@left-dial.com</a
+                        >
+                    </div>
+                </div>
+                <!--/ Menu Widget (Left) -->
+
+                <!-- Menu Widget (Middle) -->
+                <div class="menu-widget-wrapper mww-2">
+                    <div class="scrolling-button">
+                        <a
+                            href="https://www.instagram.com/gridsanddots/?hl=en"
+                            target="_blank"
+                            >Grids & Dots</a
+                        >
+                    </div>
+                </div>
+                <!--/ Menu Widget (Middle) -->
+
+                <!-- Menu Widget (Right -->
+                <div class="menu-widget-wrapper mww-3">
+                    <div class="menu-widget">
+                        <ul class="widget-socials">
+                            <li>
+                                <a href="mailto:daniel@left-dial.com">mail</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/in/danielhandaru/"
+                                    target="_blank"
+                                    >linkedin</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.instagram.com/lonely_dot_photos"
+                                    target="_blank"
+                                    >instagram</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://open.spotify.com/artist/7ba827SJSUU4l3AORy4Doy"
+                                    target="_blank"
+                                    >spotify</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--/ Menu Widget (Right) -->
+            </div>
+            <!-- /Menu -->
+        </header>
+        <!-- /Header -->
+
+        <!-- Site Content -->
+        <div id="main" class="content">
+            <div
+                class="page-settings"
+                data-layout="light"
+                data-header-style="dark"
+                data-menu-layout="dark"
+                data-background="#f5f5f5"
+            ></div>
+
+            <!-- Single Project -->
+            <div class="single-project">
+                <!-- Project Header -->
+                <div class="project-header">
+                    <!-- Project Image -->
+                    <div class="project-image">
+                        <!-- <img loading="lazy"
+                            src="images/projects/fleava/sp_head.jpg"
+                            alt="Project Header Image"
+                        /> -->
+                    </div>
+                    <!--/ Project Image -->
+
+                    <div class="project-top">
+                        <!-- Project Category -->
+                        <div
+                            data-delay=".2"
+                            class="project-work has-animation skew-down"
+                        >
+                            product design
+                        </div>
+                        <!-- Project Category -->
+
+                        <!-- Project Title -->
+                        <div class="project-title has-animation skew-up" style="color: red;">
+                            Isuzu Ute
+                        </div>
+
+                        <!-- Project Title -->
+                    </div>
+
+                    <!-- Project Metas -->
+                    <div class="project-meta">
+                        <div data-delay=".7" class="has-animation skew-up">
+                            <span class="pm-tit">Client: </span>Isuzu Ute
+                            Australia
+                        </div>
+
+                        <div data-delay=".8" class="has-animation skew-up">
+                            <span class="pm-tit">Project: </span>Various
+                        </div>
+
+                        <div data-delay=".9" class="has-animation skew-up">
+                            <span class="pm-tit">Role: </span>End-to-end User
+                            Experience
+                        </div>
+                    </div>
+                    <!-- Project Metas -->
+                    <!-- Project Summary -->
+                    <div
+                        data-delay="1"
+                        class="project-summary"
+                    >
+                        Isuzu Ute are rapidly growing in the ute / small truck
+                        segment with their D-Max and M-Max small truck lines and
+                        they were looking to refresh different elements of their
+                        website to reflect a more modern and fresh design, and build new modern, visual tools to nudge customers towards online enquiries and purchases.
+                    </div>
+                    <!-- Project Summary -->
+                </div>
+                <!--/ Project Header -->
+
+                <!-- Page Settings -->
+                <!-- <div
+                class="page-settings"
+                data-layout="light"
+                data-header-style="dark"
+                data-menu-layout="dark"
+                data-background="#f5f5f5"
+            ></div> -->
+                <!-- Page Settings -->
+
+                <!-- Project Content -->
+                <div class="project-content">
+                    <!-- Section -->
+                    <div class="section mobTop" style="margin-bottom: 0">
+                        <!-- Wrapper (Small) -->
+                        <div class="wrapper-small" style="margin-bottom: 0">
+                            <!-- <div
+                                class="pe-empty-space"
+                                style="height: 200px"
+                            ></div> -->
+
+                            <div class="inLinks">
+                                <div class="c-col-4">
+                                    <p>
+                                        <a class="button" style="color: #C21302;" href="#VS">
+                                            Video showcase ></a
+                                        >
+                                    </p>
+                                </div>
+                                <div class="c-col-4">
+                                    <p>
+                                        <a class="button" style="color: #C21302;" href="#Tsumiki"
+                                            >Tsumiki 360 viewer ></a
+                                        >
+                                    </p>
+                                </div>
+                                <div class="c-col-4">
+                                    <p>
+                                        <a class="button" style="color: #C21302;" href="#textBlocks"
+                                            >Text blocks ></a
+                                        >
+                                    </p>
+                                </div>
+                            </div>
+                            <!--in links-->
+
+                            <!-- Column -->
+                            <div
+                                class="c-col-12"
+                                style="margin-bottom: 80px"
+                                id="VS"
+                            >
+                                <!-- Text wrapper -->
+                                <div class="text-wrapper">
+
+                                    <h2>
+                                        Video showcase component
+                                    </h2>
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        Videos had become an important part of
+                                        the user consideration journey and is
+                                        content that is highly sought after. IUA
+                                        needed to be able to add more videos to
+                                        pages using a component that can house
+                                        multiple videos for the user to engage
+                                        with, without taking up too much space
+                                        on the page. My role was esseintially to
+                                        help increase videos engagement and
+                                        viewership.
+                                    </p>
+                                    <p
+
+                                        class="big-p"
+                                        style="margin-bottom: 28px"
+                                    >
+                                    As
+                                    part of scope I researched, planned usage of and
+                                    designed new componentry to help their digital assets
+                                    catch up to their presence in the overall market. Surveys suggest that more than 95% of
+                                    consumers find that video aids their
+                                    purchasing decisions and more than 70%
+                                    say they’re more likely to purchase
+                                    products advertised using video.
+                                    </p>
+
+                                    <p
+
+                                        class="big-p"
+                                        style="margin-bottom: 28px"
+                                    >
+                                        Carousels are generally a good practice
+                                        from the UX (user experience) point of
+                                        view as long as you use them in the
+                                        right places, for the right purpose, and
+                                        in the right way.
+                                    </p>
+                                </div>
+                                <!--/ Text wrapper -->
+                            </div>
+                            <!--/ Column -->
+                        </div>
+                        <!--/ Wrapper (Small) -->
+                    </div>
+                    <!--/ Section -->
+
+                    <!-- Img Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper -->
+                        <div class="wrapper">
+                            <!-- Column -->
+                            <div class="c-col-6">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img loading="lazy"
+                                        src="images/folio/works/isuzu/VS/WF1.png"
+                                        alt="Single Image"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Column -->
+                            <div class="c-col-6">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img loading="lazy"
+                                        src="images/folio/works/isuzu/VS/WF2.png"
+                                        alt="Single Image"
+                                    />
+                                </div>
+                                <!--/ Image Wrapper -->
+                            </div>
+                            <!--/ Column -->
+                        </div>
+                        <!-- Wrapper -->
+                    </div>
+                    <!--/ Section -->
+
+                    <!-- Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper (Small) -->
+                        <div class="wrapper-small" style="margin-bottom: 0">
+                            <!-- Column -->
+                            <div class="c-col-12" style="margin-bottom: 0px">
+                                <!-- Text wrapper -->
+                                <div
+                                    class="text-wrapper"
+                                    style="margin-bottom: 80px"
+                                >
+
+
+                                    <!-- <h3 class="has-animation lines-fade-up">
+                                        Homepage redesign
+                                    </h3> -->
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        Some of the UX considerations that I
+                                        needed to take into account when
+                                        designing were
+                                    </p>
+                                    <ul style="margin-left: 20px;">
+                                        <li style="padding-bottom: 20px !important;
+                                        font-size: 18px !important;
+                                        line-height: 1.6 !important;
+                                        color: #6d6d6d !important;
+                                        list-style-type: square !important;">
+                                            Ensure the carousel is
+                                            touch-friendly on mobile devices
+                                        </li>
+                                        <li style="padding-bottom: 20px !important;
+                                        font-size: 18px !important;
+                                        line-height: 1.6 !important;
+                                        color: #6d6d6d !important;
+                                        list-style-type: square !important;">
+                                            Not use video showcase component for
+                                            essential information as they can
+                                            often be skipped by users. They
+                                            should primarily be used for content
+                                            enrichment and visit engagement
+                                        </li>
+                                        <li style="padding-bottom: 20px !important;
+                                        font-size: 18px !important;
+                                        line-height: 1.6 !important;
+                                        color: #6d6d6d !important;
+                                        list-style-type: square !important;">
+                                            Not to autoplay videos. Users who
+                                            don’t want to watch the video must
+                                            devote extra effort to figure out
+                                            how to turn the audio off or pause
+                                            the video, rather than focusing on
+                                            their goals. This usually annoys
+                                            users
+                                        </li>
+                                        <li style="padding-bottom: 20px !important;
+                                        font-size: 18px !important;
+                                        line-height: 1.6 !important;
+                                        color: #6d6d6d !important;
+                                        list-style-type: square !important;">
+                                            Consider what the user should do at
+                                            the end of a video. Is there the
+                                            ability to prompt them to the next
+                                            video? At the least, ensure any
+                                            related videos are Isuzu owned
+                                            videos and not unrelated, or
+                                            competitor videos
+                                        </li>
+                                        <li style="padding-bottom: 20px !important;
+                                        font-size: 18px !important;
+                                        line-height: 1.6 !important;
+                                        color: #6d6d6d !important;
+                                        list-style-type: square !important;">
+                                            Try to include 3-4 tiles/videos in
+                                            each video showcase component (if
+                                            less than 3, let's rethink the
+                                            layout)
+                                        </li>
+                                        <li style="padding-bottom: 20px !important;
+                                        font-size: 18px !important;
+                                        line-height: 1.6 !important;
+                                        color: #6d6d6d !important;
+                                        list-style-type: square !important;">
+                                            Prototype an interesting 'tile lift'
+                                            or 'tile expansion' for use as a
+                                            hover state for both user
+                                            interaction and engagement
+                                        </li>
+                                        <li style="padding-bottom: 20px !important;
+                                        font-size: 18px !important;
+                                        line-height: 1.6 !important;
+                                        color: #6d6d6d !important;
+                                        list-style-type: square !important;">
+                                            recommended that users should be
+                                            able to reach the last item in the
+                                            carousel in 3–4 steps (i.e., taps or
+                                            swipes). Try not to exceed ~8 videos
+                                            per video showcase component. You
+                                            don't want to overwhelm the user
+                                            with too much choice.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--/ Text wrapper -->
+                            </div>
+                            <!--/ Column -->
+                        </div>
+                        <!--/ Wrapper (Small) -->
+                    </div>
+                    <!--/ Section -->
+
+                    <!-- Img Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper -->
+                        <div class="wrapper">
+                            <!-- Column -->
+                            <div class="c-col-6">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img loading="lazy"
+                                        src="images/folio/works/isuzu/VS/Desktop 2.webp"
+                                        alt="Single Image"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Column -->
+                            <div class="c-col-6">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img loading="lazy"
+                                        src="images/folio/works/isuzu/VS/tileDesigns.jpg"
+                                        alt="Single Image"
+                                    />
+                                </div>
+                                <!--/ Image Wrapper -->
+                            </div>
+                            <!--/ Column -->
+                        </div>
+                        <!-- Wrapper -->
+                    </div>
+                    <!--/ Section -->
+
+                    <!-- Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper (Small) -->
+                        <div class="wrapper-small" style="margin-bottom: 0">
+                            <!-- Column -->
+                            <div class="c-col-12" style="margin-bottom: 0px">
+                                <!-- Text wrapper -->
+                                <div
+                                    class="text-wrapper"
+                                    style="margin-bottom: 80px"
+                                >
+
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        The client was very happy with the
+                                        designs and although we needed to do a
+                                        slight redesign due to some technical
+                                        limitations of the front-end frameworks
+                                        being used, IUA now had a method of
+                                        really showcasing their many high
+                                        quality videos of various products.
+                                    </p>
+                                </div>
+                                <!--/ Text wrapper -->
+                            </div>
+                            <!--/ Column -->
+                        </div>
+                        <!--/ Wrapper (Small) -->
+                    </div>
+                    <!--/ Section -->
+
+                    <!-- Section -->
+                    <div class="section" style="margin-bottom: 0" id="Tsumiki">
+                        <!-- Wrapper (Small) -->
+                        <div class="wrapper-small" style="margin-bottom: 0">
+                            <!-- Column -->
+                            <div class="c-col-12" style="margin-bottom: 0px">
+                                <!-- Text wrapper -->
+                                <div
+                                    class="text-wrapper"
+                                    style="margin-bottom: 80px"
+                                >
+
+
+                                    <h2>
+                                        Tsumiki 360 degree viewer
+                                    </h2>
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        IUA had developed a tool where the user
+                                        can view the full exterior of their
+                                        vehicle by rotating its image in any
+                                        direction. The user can also cusomise
+                                        the car with different colours and
+                                        accessories, allowing the potential
+                                        buyer to see what their 'dream car' may
+                                        look like before or after making an
+                                        enquiry.
+                                    </p>
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        What IUA needed was a user-friendly,
+                                        immersive, scalable and on-brand tool
+                                        design to guide them through the
+                                        journey. There were some main
+                                        functionalities to consider when
+                                        designing the tool - Grade, Model,
+                                        Controls, Colours, Accessories, Progress
+                                        toolbar.
+                                    </p>
+                                </div>
+                                <!--/ Text wrapper -->
+                            </div>
+                            <!--/ Column -->
+                        </div>
+                        <!--/ Wrapper (Small) -->
+                    </div>
+                    <!--/ Section -->
+
+                    <!-- Img Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper -->
+                        <div class="wrapper">
+                            <!-- Column -->
+                            <div class="c-col-6">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img loading="lazy"
+                                        src="images/folio/works/isuzu/Tsumiki/WF2.png"
+                                        alt="Single Image"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Column -->
+                            <!-- Column -->
+                            <div class="c-col-6">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img loading="lazy"
+                                        src="images/folio/works/isuzu/Tsumiki/WF1.png"
+                                        alt="Single Image"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Column -->
+                        </div>
+                        <!--/ Column -->
+                    </div>
+                    <!-- Wrapper -->
+                </div>
+                <!--/ Section -->
+
+                <!-- Section -->
+                <div class="section" style="margin-bottom: 0">
+                    <!-- Wrapper (Small) -->
+                    <div class="wrapper-small" style="margin-bottom: 0">
+                        <!-- Column -->
+                        <div class="c-col-12" style="margin-bottom: 0px">
+                            <!-- Text wrapper -->
+                            <div
+                                class="text-wrapper"
+                                style="margin-bottom: 80px"
+                            >
+
+
+
+                                <p
+
+                                    class="big-p"
+                                >
+                                    There were also these considerations I
+                                    needed to take into account when working on
+                                    the design -
+                                </p>
+                                <ul style="margin-left: 20px;">
+                                    <li style="padding-bottom: 20px !important;
+                                    font-size: 18px !important;
+                                    line-height: 1.6 !important;
+                                    color: #6d6d6d !important;
+                                    list-style-type: square !important;">
+                                        How will users access the Tsumiki 360
+                                        viewer? Do we need to add links or CTAs
+                                        to the product pages or navigation?
+                                    </li>
+                                    <li style="padding-bottom: 20px !important;
+                                    font-size: 18px !important;
+                                    line-height: 1.6 !important;
+                                    color: #6d6d6d !important;
+                                    list-style-type: square !important;">
+                                        What is the desired action we want the
+                                        user to take after interacting with the
+                                        360 tool? How do we help them get there?
+                                    </li>
+                                    <li style="padding-bottom: 20px !important;
+                                    font-size: 18px !important;
+                                    line-height: 1.6 !important;
+                                    color: #6d6d6d !important;
+                                    list-style-type: square !important;">
+                                        What CTAs or secondary messaging is
+                                        required? e.g. push to Build and Quote
+                                    </li>
+                                    <li style="padding-bottom: 20px !important;
+                                    font-size: 18px !important;
+                                    line-height: 1.6 !important;
+                                    color: #6d6d6d !important;
+                                    list-style-type: square !important;">
+                                        What does success look like and how do
+                                        we measure it? e.g. Time on page, flow
+                                        on goal conversions etc.
+                                    </li>
+                                    <li style="padding-bottom: 20px !important;
+                                    font-size: 18px !important;
+                                    line-height: 1.6 !important;
+                                    color: #6d6d6d !important;
+                                    list-style-type: square !important;">
+                                        Will re-selecting the Model or Grade
+                                        reset the tool? Do we need to give users
+                                        warning of this? Does it matter given
+                                        the nature of the tool?
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--/ Text wrapper -->
+                        </div>
+                        <!--/ Column -->
+                    </div>
+                    <!--/ Wrapper (Small) -->
+                </div>
+                <!--/ Section -->
+
+                <!-- Img Section -->
+                <div class="section" style="margin-bottom: 0">
+                    <!-- Wrapper -->
+                    <div class="wrapper">
+                        <!-- Column -->
+                        <div class="c-col-6">
+                            <!-- Image Wrapper -->
+                            <div class="image-wrapper">
+                                <img loading="lazy"
+                                    src="images/folio/works/isuzu/Tsumiki/mobile.jpg"
+                                    alt="Single Image"
+                                />
+                            </div>
+                        </div>
+                        <!-- Column -->
+                        <!-- Column -->
+                        <div class="c-col-6">
+                            <!-- Image Wrapper -->
+                            <div class="image-wrapper">
+                                <img loading="lazy"
+                                    src="images/folio/works/isuzu/Tsumiki/Desktop.png"
+                                    alt="Single Image"
+                                />
+                            </div>
+                        </div>
+                        <!-- Column -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!-- Wrapper -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Section -->
+            <div class="section" style="margin-bottom: 0" id="textBlocks">
+                    <!-- Wrapper (Small) -->
+                <div class="wrapper-small" style="margin-bottom: 0">
+                        <!-- Column -->
+                    <div class="c-col-12" style="margin-bottom: 0px">
+                            <!-- Text wrapper -->
+                        <div
+                                class="text-wrapper"
+                                style="margin-bottom: 60px">
+                            <div class="caption has-animation skew-up">
+                                    <!--copy here -->
+                            </div>
+
+                             <h2>
+                                    Text Block CTAs
+                            </h2>
+                            <p
+
+                                    class="big-p">
+                                    One of the style of components IUA was missing on their website by comparison to their competitors was stylish, strategically placed typographic elements which serve as CTAs. We wanted to increase the number of text-driven CTAs on the website to give the site a cleaner, less cluttered look and make them stand out to users.
+
+                            </p>
+                            <p
+
+                                    class="big-p"
+                                    style="margin-bottom: 28px">
+                                        As a website user we want to see clear CTAs on a page so that they know what they need to do next without having to think about it too much. As a content editor we want to add more text-driven CTAs on a page so that we can make them stand out and increase user engagement with them.
+                            </p>
+                            <p
+
+                                    class="big-p"
+                                    style="margin-bottom: 28px">
+                                        My considerations for design also included:
+                            </p>
+
+                            <ul style="margin-left: 20px;">
+                                <li style="padding-bottom: 20px !important;
+                                font-size: 18px !important;
+                                line-height: 1.6 !important;
+                                color: #6d6d6d !important;
+                                list-style-type: square !important;">
+                                    What component or components is this going to be used with?
+                                </li>
+                                <li style="padding-bottom: 20px !important;
+                                font-size: 18px !important;
+                                line-height: 1.6 !important;
+                                color: #6d6d6d !important;
+                                list-style-type: square !important;">
+                                    Should this be implemented into current components, or completely new ones?
+                                </li>
+                                <li style="padding-bottom: 20px !important;
+                                font-size: 18px !important;
+                                line-height: 1.6 !important;
+                                color: #6d6d6d !important;
+                                list-style-type: square !important;">
+                                    Eventually need to specify exact dimensions for the developers
+                                </li>
+                                <li style="padding-bottom: 20px !important;
+                                font-size: 18px !important;
+                                line-height: 1.6 !important;
+                                color: #6d6d6d !important;
+                                list-style-type: square !important;">
+                                    How much text/copy will be used in the component? Will it primarily be used as a CTA (prominent heading text) or to be used as a descriptive text block as well?
+                                </li>
+                                <li style="padding-bottom: 20px !important;
+                                font-size: 18px !important;
+                                line-height: 1.6 !important;
+                                color: #6d6d6d !important;
+                                list-style-type: square !important;">
+                                    Variable text colours, background colours and button styles? Or choose a style and have it relatively static?
+                                </li>
+                                <li style="padding-bottom: 20px !important;
+                                font-size: 18px !important;
+                                line-height: 1.6 !important;
+                                color: #6d6d6d !important;
+                                list-style-type: square !important;">
+                                    Some of the current pages are quite full and boxy, these text components could also be used as a way to add some white space (even if not actually white) / breathing room into the page
+                                </li>
+
+                            </ul>
+
+
+                        </div>
+                            <!--/ Text wrapper -->
+                    </div>
+                        <!--/ Column -->
+                </div>
+                    <!--/ Wrapper (Small) -->
+            </div>
+                <!--/ Section -->
+
+                <!-- Img Section -->
+                <div class="section" style="margin-bottom: 0px;">
+                    <!-- Wrapper -->
+                    <div class="wrapper" style="margin-bottom: 0">
+                        <!-- Column -->
+                        <div class="c-col-12">
+                            <!-- Image Wrapper -->
+                            <div class="image-wrapper" >
+                                <img loading="lazy"
+                                    src="images/folio/works/isuzu/Text Blocks/Colour options.png"
+                                    alt="Single Image"
+                                />
+
+                            </div>
+
+                        </div>
+                    <!--/ Column -->
+                    </div>
+                <!-- Wrapper -->
+                </div>
+            <!--/ Section -->
+            <!-- Img Section -->
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper -->
+                <div class="wrapper">
+                    <!-- Column -->
+                    <div class="c-col-6">
+                        <!-- Image Wrapper -->
+                        <div class="image-wrapper">
+                            <img loading="lazy"
+                                src="images/folio/works/isuzu/Text Blocks/Desktop.webp"
+                                alt="Single Image"
+                            />
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="c-col-6">
+                        <!-- Image Wrapper -->
+                        <div class="image-wrapper">
+                            <img loading="lazy"
+                                src="images/folio/works/isuzu/Text Blocks/Mobile screens.webp"
+                                alt="Single Image"
+                            />
+                        </div>
+                        <!--/ Image Wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!-- Wrapper -->
+            </div>
+            <!--/ Section -->
+    </div>
+    <!--/ Section -->
+
+
+
+
+
+
+            <!-- Footer -->
+            <footer class="site-footer">
+                <!-- Fullwidth Wrapper -->
+                <div class="wrapper">
+                    <!-- Column -->
+                    <div class="c-col-12">
+                        <h1 class="thin" style="margin: 0">
+                            Want to get in touch? <br /><a
+                                class="underline"
+                                href="mailto:daniel@left-dial.com"
+                                >daniel@left-dial.com</a
+                            >
+                        </h1>
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!-- Fullwidth Wrapper -->
+
+                <!-- Fullwidth Wrapper -->
+                <div style="margin-bottom: 75px" class="wrapper-full">
+                    <div class="c-col-6 hide-mobile"></div>
+
+                    <!-- Column -->
+                    <div class="c-col-3 no-gap">
+                        <!-- <div class="caption">VISIT</div>
+                        <h5>
+                            32 Avenue of the Americas <br />New York, NY 10013
+                            <br />United States
+                        </h5> -->
+                    </div>
+                    <!--/ Column -->
+
+                    <!-- Column -->
+                    <div class="c-col-3 no-gap">
+                        <div class="caption">I'M ALSO HERE</div>
+
+                        <!-- Footer List -->
+                        <ul class="footer-list">
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/in/danielhandaru/"
+                                    target="_blank"
+                                    class="underline"
+                                    >Linkedin</a
+                                >
+                            </li>
+
+                            <li>
+                                <a
+                                    href="https://www.instagram.com/gridsanddots/?hl=en"
+                                    target="_blank"
+                                    class="underline"
+                                    >Instagram</a
+                                >
+                            </li>
+                            <li>
+                                <a href="index.html" class="underline"
+                                    >Go home</a
+                                >
+                            </li>
+                        </ul>
+                        <!-- Footer List -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!-- Fullwidth Wrapper -->
+            </footer>
+            <!--/ Footer -->
+        </div>
+        <!--/ Site Content -->
+
+        <script defer src="js/jquery.min.js"></script>
+        <script defer src="js/plugins.js"></script>
+        <script defer src="js/scripts.js"></script>
+        <script defer src="js/jquery.smoothState.js"></script>
+        <script defer src="js/page-transitions.js"></script>
+    </body>
+</html>

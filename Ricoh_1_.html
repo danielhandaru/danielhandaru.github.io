@@ -1,0 +1,1218 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <!-- Page Title -->
+        <title>Ricoh Asia Pacific — Web UX/UI | Left Dial Designs</title>
+        <!--/ Page Title -->
+
+        <meta name="author" content="Daniel Handaru" />
+        <meta name="description" content="UX and front-end design across Ricoh's Asia-Pacific web platform — navigation menu redesign, layout and banner work, user-journey analysis and on-page SEO." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link
+            href="https://fonts.googleapis.com/css?family=Archivo:400,500,600,700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link href="css/plugins.css" rel="stylesheet" />
+        <link href="css/entypo.css" rel="stylesheet" />
+
+        <link href="style2.css" rel="stylesheet" />
+
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="images/folio/favicons/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            href="images/folio/favicons/favicon_2.ico"
+        />
+        <!--/ Favicons -->
+
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+
+            .project-header {
+                margin-bottom: 0;
+            }
+
+            .project-title {
+                color: #cf142b;
+            }
+            /* .inLinks {
+                margin-bottom: 40px;
+            } */
+            .inLinks a {
+                text-decoration: none;
+                color: #cf142b;
+            }
+
+            .inLinks a.underline::before {
+                background: #cf142b;
+            }
+
+            a {
+                color: #6d6d6d;
+                text-decoration: underline;
+            }
+
+            a.underline:hover {
+                color: #ede574;
+            }
+
+            a:hover {
+                color: #ede574;
+            }
+            a.underline:hover {
+                color: #ede574;
+            }
+
+            .footer-list li a:hover {
+                color: #ede574;
+            }
+            p {
+                font-size: 18px;
+                line-height: 1.3;
+            }
+
+            /* p.big-p {
+                color: #928b8b;
+            } */
+            p.big-p {
+                color: #6d6d6d;
+            }
+
+            h2 {
+            }
+            h3 {
+                line-height: 1.3;
+                margin-top: 2.4rem;
+                margin-bottom: 1.3rem;
+                font-size: 28px;
+                font-weight: 400;
+            }
+
+            ul {
+                margin-left: 20px;
+            }
+            li {
+                padding-bottom: 20px;
+                font-size: 18px;
+                line-height: 1.6;
+                color: #6d6d6d;
+                list-style-type: square;
+            }
+            li::marker {
+                color: #e0004d;
+            }
+
+            .new-menu {
+                position: absolute;
+                    right: 7vw;
+                    cursor: pointer;
+                    top: 56px;
+                    -webkit-transition: all 0.3s;
+                    -o-transition: all 0.3s;
+                    transition: all 0.3s;
+                    -webkit-transform-origin: center center;
+                    -ms-transform-origin: center center;
+                    transform-origin: center center;
+                    z-index: 113;
+                    width: 35px;
+                    height: 35px;
+            }
+
+            .toggle-lineB {
+                display: block;
+                height: 2px;
+                width: 35px;
+                background: #000;
+                margin-bottom: 5px;
+                margin-left: auto;
+                margin-right: auto;}
+
+            .toggle-line-in {visibility: hidden;}
+            .is-active .toggle-line-in {visibility: visible;}
+
+            @media (max-width: 1250px) {
+                .hide {display: none;}
+
+                p.big-p {
+                    font-size: 20px;
+                }
+            }
+            @media only screen and (max-width: 850px) {
+                .project-header .project-image {
+                    height: 30vh;
+                }
+            }
+
+
+        </style>
+        <link href="css/hover.css" rel="stylesheet" />
+        </head>
+
+
+
+    <body>
+        <!-- Loading Text -->
+        <div class="loading-text">Loading</div>
+        <!-- Loading Text -->
+
+        <!-- Lines (Don't Touch) -->
+        <div class="lines"></div>
+        <!-- /Lines -->
+
+        <!-- Page Loader -->
+        <div class="cygni-loader">
+            <div class="counter" data-count="99">00</div>
+        </div>
+        <!-- /Page Loader -->
+
+        <!-- Overlays (Don't Touch) -->
+        <div class="overlays"></div>
+        <!-- /Overlays -->
+
+        <!-- Header -->
+        <header class="site-header">
+            <!-- Branding -->
+            <!-- <div class="site-branding">
+                <img loading="lazy"
+                    class="dark-logo"
+                    src="images/cygni-logo.png"
+                    alt="Site Logo"
+                />
+                <img loading="lazy"
+                    class="light-logo"
+                    src="images/cygni-logo-light.png"
+                    alt="Site Light Logo"
+                />
+            </div> -->
+            <!-- /Branding -->
+
+            <!-- Menu -->
+            <div class="site-navigation">
+                <div class="home-button"><a href="index.html">HOME</a></div>
+                <!-- Menu Toggle (Don't Touch) -->
+                <!-- <div class="menu-toggle"><span class="hide">CONTACT ME</span></div> -->
+                <div class="new-menu menu-toggle">
+                    <span class="toggle-lineB toggle-line-1"></span>
+                    <span class="toggle-lineB toggle-line-2"></span>
+                    <span class="hide">CONTACT</span>
+                </div>
+                <!-- /Menu Toggle -->
+
+                <!-- Menu Overlays (Don't Touch) -->
+                <div class="menu-overlays"></div>
+                <!-- Menu Overlays -->
+
+                <div class="menu-wrapper">
+                    <!-- Navigation -->
+                    <ul class="menu">
+                        <!-- Main Menu -->
+                        <li class="menu-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="HCF_.html">HCF</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="isuzu_.html">Isuzu</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="Chartered.html">CAANZ</a>
+                        </li>
+                        <li class="menu-item menu-item-active">
+                            <a href="Ricoh_1_.html">Ricoh</a>
+                        </li>
+                        <!-- /Main Menu -->
+                    </ul>
+                    <!-- /Navigation -->
+                </div>
+
+                <!-- Menu Widget (Left) -->
+                <div class="menu-widget-wrapper mww-1">
+                    <div class="menu-widget">
+                        <div class="menu-widget-title">WORK TOGETHER</div>
+
+                        <a href="mailto:daniel@left-dial.com"
+                            >daniel@left-dial.com</a
+                        >
+                    </div>
+                </div>
+                <!--/ Menu Widget (Left) -->
+
+                <!-- Menu Widget (Middle) -->
+                <div class="menu-widget-wrapper mww-2">
+                    <div class="scrolling-button">
+                        <a
+                            href="https://www.instagram.com/gridsanddots/?hl=en"
+                            target="_blank"
+                            >Grids & Dots</a
+                        >
+                    </div>
+                </div>
+                <!--/ Menu Widget (Middle) -->
+
+                <!-- Menu Widget (Right -->
+                <div class="menu-widget-wrapper mww-3">
+                    <div class="menu-widget">
+                        <ul class="widget-socials">
+                            <li>
+                                <a href="mailto:daniel@left-dial.com">mail</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/in/danielhandaru/"
+                                    target="_blank"
+                                    >linkedin</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.instagram.com/lonely_dot_photos"
+                                    target="_blank"
+                                    >instagram</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://open.spotify.com/artist/7ba827SJSUU4l3AORy4Doy"
+                                    target="_blank"
+                                    >spotify</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--/ Menu Widget (Right) -->
+            </div>
+            <!-- /Menu -->
+        </header>
+        <!-- /Header -->
+
+        <!-- Site Content -->
+        <div id="main" class="content">
+            <div
+                class="page-settings"
+                data-layout="light"
+                data-header-style="dark"
+                data-menu-layout="dark"
+                data-background="#f5f5f5"
+            ></div>
+
+            <!-- Single Project -->
+            <div class="single-project">
+                <!-- Project Header -->
+                <div class="project-header">
+                    <!-- Project Image -->
+                    <div class="project-image">
+                        <!-- <img loading="lazy"
+                            src="images/projects/fleava/sp_head.jpg"
+                            alt="Project Header Image"
+                        /> -->
+                    </div>
+                    <!--/ Project Image -->
+
+                    <div class="project-top">
+                        <!-- Project Category -->
+                        <div
+                            data-delay=".2"
+                            class="project-work"
+                        >
+                            UX/UI & Digital Production
+                        </div>
+                        <!-- Project Category -->
+
+                        <!-- Project Title -->
+                        <div class="project-title"style="color: #cf142b;">
+                            Ricoh Asia-Pacific
+                        </div>
+
+                        <!-- Project Title -->
+                    </div>
+
+                    <!-- Project Metas -->
+                    <div class="project-meta">
+                        <div>
+                            <span class="pm-tit">Client: </span>Ricoh
+                        </div>
+
+                        <div>
+                            <span class="pm-tit">Project: </span>Various
+                        </div>
+
+                        <div>
+                            <span class="pm-tit">Role: </span>Lead Designer &
+                            Web Manager
+                        </div>
+                    </div>
+                    <!-- Project Metas -->
+                    <!-- Project Summary -->
+                    <div
+                        data-delay="1"
+                        class="project-summary"
+                    >
+                        At Ricoh Asia-Pacific, I have worked in a hybrid role of
+                        UI/UX design, Front-end development and
+                        stakeholder/product management. I was the team leader of
+                        the APAC Central Web Team that managed the web contents
+                        and design for 9 different OpCo stakeholders around the
+                        region.
+                    </div>
+                    <!-- Project Summary -->
+                </div>
+                <!--/ Project Header -->
+
+                <!-- Page Settings -->
+                <!-- <div
+                class="page-settings"
+                data-layout="light"
+                data-header-style="dark"
+                data-menu-layout="dark"
+                data-background="#f5f5f5"
+            ></div> -->
+                <!-- Page Settings -->
+
+                <!-- Project Content -->
+                <div class="project-content">
+                    <!-- Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper (Small) -->
+                        <div class="wrapper-small" style="margin-bottom: 0">
+                            <!-- Column -->
+                            <div class="c-col-12" style="margin-bottom: 0px">
+                                <!-- Text wrapper -->
+                                <div
+                                    class="text-wrapper"
+                                    style="margin-bottom: 80px"
+                                >
+
+
+                                    <!-- <h3 class="has-animation lines-fade-up">
+                                        Homepage redesign
+                                    </h3> -->
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        I worked at Ricoh in the APAC regional
+                                        team in a web management and design
+                                        role, leading the regional website
+                                        rollout and I both consult for and
+                                        project manage the 9 other OpCo websites
+                                        on the platform including Taiwan, Hong
+                                        Kong, Thailand and other countries
+                                        throughout APAC.
+                                    </p>
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        A large part of my ongoing role was to
+                                        continually improve the UX and UI of the
+                                        fresh regional sites and also to lead
+                                        the region in digital brand management,
+                                        ensuring that all OpCo skateholders kept
+                                        a consistency of design which not just
+                                        adhered to our brand styleguide, but
+                                        also kept up do date with modern web
+                                        best UX and visual practices as well as
+                                        WCAG guidelines . I build and maintain
+                                        the regional <a style="color:#cf142b;" href="Ricoh_2_.html"
+                                            >design system</a
+                                        >
+                                        for APAC use.
+                                    </p>
+                                </div>
+                                <!--/ Text wrapper -->
+                            </div>
+                            <!--/ Column -->
+                            <!-- <div
+                                class="pe-empty-space"
+                                style="height: 200px"
+                            ></div> -->
+
+                            <div class="inLinks">
+                                <div class="c-col-4">
+                                    <p>
+                                        <a class="button" style="color: #cf142b" href="#FoF">
+                                            Focus on Forward</a>
+                                    </p>
+                                </div>
+                                <div class="c-col-4">
+                                    <p>
+                                        <a class="button" style="color: #cf142b" href="#navMenu">
+                                            UX Navigation menu redesign</a>
+                                    </p>
+                                </div>
+                                <div class="c-col-4">
+                                    <p>
+                                        <a class="button" style="color: #cf142b" href="#grids">
+                                            Layout & UI enhancement</a>
+                                    </p>
+                                </div>
+                                <div class="c-col-4">
+                                    <p>
+                                        <a class="button" style="color: #cf142b" href="#banner">
+                                            Homepage banner redesign</a>
+                                    </p>
+                                </div>
+                                <div class="c-col-4">
+                                    <p>
+                                        <a class="button" style="color: #cf142b" href="#pathAnalyser">
+                                            User journeys | Path Analyser</a>
+                                    </p>
+                                </div>
+                                <div class="c-col-4">
+                                    <p>
+                                        <a class="button" style="color: #cf142b" href="#SEO">
+                                            Web SEO enhancements</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <!--in links-->
+
+                            <!-- Column -->
+                            <div
+                                class="c-col-12"
+                                style="margin-bottom: 80px"
+                                id="FoF"
+                            >
+                                <!-- Text wrapper -->
+                                <div class="text-wrapper">
+                                    <div class="caption">
+                                        <!--copy here -->
+                                    </div>
+
+                                    <h2 style="color: #cf142b;">
+                                        Focus on Forward / Digital Services
+                                        launch
+                                    </h2>
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        Collaborating with an external agency, I
+                                        was asked to design and build the User
+                                        Interface for a brand new set of
+                                        business offerings that Ricoh was hoping
+                                        would showcase a new business direction
+                                        for them. Previously having been very
+                                        successful in the office printing and
+                                        office solutions trade, Ricoh was now
+                                        attempting a transformation to become a
+                                        major competitor in the digital services
+                                        field.
+                                    </p>
+                                    <p
+
+                                        class="big-p"
+                                        style="margin-bottom: 28px"
+                                    >
+                                        We brainstormed, wireframed, planned out
+                                        and created new imagery and templates
+                                        using the design system to be used for
+                                        the campaign. The campaign was a
+                                        complete departure from Ricoh's standard
+                                        brand designs to announce a big change
+                                        in direction for the business.
+                                    </p>
+                                </div>
+                                <!--/ Text wrapper -->
+                            </div>
+                            <!--/ Column -->
+                        </div>
+                        <!--/ Wrapper (Small) -->
+                    </div>
+                    <!--/ Section -->
+
+                    <!-- Img Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper -->
+                        <div class="wrapper">
+                            <!-- Column -->
+                            <div class="c-col-6">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img loading="lazy"
+                                        src="images/folio/works/ricoh_web/ricoh_FoF_1.webp"
+                                        alt="Single Image"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Column -->
+                            <div class="c-col-6">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img loading="lazy"
+                                        src="images/folio/works/ricoh_web/ricoh_FoF_2.webp"
+                                        alt="Single Image"
+                                    />
+                                </div>
+                                <!--/ Image Wrapper -->
+                            </div>
+                            <!--/ Column -->
+                        </div>
+                        <!-- Wrapper -->
+                    </div>
+                    <!--/ Section -->
+
+                    <!-- Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper (Small) -->
+                        <div class="wrapper-small" style="margin-bottom: 0">
+                            <!-- Column -->
+                            <div class="c-col-12" style="margin-bottom: 0px">
+                                <!-- Text wrapper -->
+                                <div
+                                    class="text-wrapper"
+                                    style="margin-bottom: 80px"
+                                >
+                                    <div>
+                                        <!--copy here -->
+                                    </div>
+
+                                    <!-- <h3 class="has-animation lines-fade-up">
+                                        Homepage redesign
+                                    </h3> -->
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        The unique look and feel which set it
+                                        apart from Ricoh's current solutions was
+                                        able to generate interest and curiosity
+                                        from both regular and new customers,
+                                        letting the world know that Ricoh was
+                                        steadily moving to a new space while
+                                        still being reliable for clients that
+                                        still depended on it's standard product
+                                        line.
+                                    </p>
+                                </div>
+                                <!--/ Text wrapper -->
+                            </div>
+                            <!--/ Column -->
+                        </div>
+                        <!--/ Wrapper (Small) -->
+                    </div>
+                    <!--/ Section -->
+
+                    <!-- Section -->
+                    <div class="section" style="margin-bottom: 0" id="navMenu">
+                        <!-- Wrapper (Small) -->
+                        <div class="wrapper-small" style="margin-bottom: 0">
+                            <!-- Column -->
+                            <div class="c-col-12" style="margin-bottom: 0px">
+                                <!-- Text wrapper -->
+                                <div
+                                    class="text-wrapper"
+                                    style="margin-bottom: 80px"
+                                >
+
+
+                                    <h2 style="color: #cf142b;">
+                                        UX Navigation menu redesign
+                                    </h2>
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        Through AB user testing, we found that a
+                                        lot of website users both internally and
+                                        externally were actually becoming a
+                                        little confused as to what 'Focus on
+                                        Forward' and the value offerings listed
+                                        under Ricoh Digital Services actually
+                                        meant. The unfamiliarity from our
+                                        audience and even older staff as to what
+                                        these new categories could actually
+                                        provide was the next pain point.
+                                    </p>
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        What we required was some way to quickly
+                                        give users an idea through description
+                                        on the home page of what these new
+                                        categories consisted of.
+                                    </p>
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        We floated a number of ideas such as -
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            Create a number of on-page panels
+                                            with descriptive sections underneath
+                                            - used too much real estate
+                                        </li>
+                                        <li>Modals - too distracting</li>
+                                        <li>
+                                            Using the new main banner option for
+                                            each new Service - would remove all
+                                            other marketing activities from
+                                            prime position at the top of the
+                                            page
+                                        </li>
+                                        <li>
+                                            Create another new landing page with
+                                            a high-level overview of the value
+                                            offerings - We did this as well, but
+                                            still not immediate enough.
+                                        </li>
+                                    </ul>
+                                    <p
+
+                                        class="big-p"
+                                    >
+                                        Google Analytics data informed us that
+                                        the most common way for users to find
+                                        our products was on the home page
+                                        directly using our navigation menu. We
+                                        needed to find a way to add more
+                                        descriptive information elements to the
+                                        navigation bar. This required a complete
+                                        redesign of the previously static,
+                                        traditional menu.
+                                    </p>
+                                </div>
+                                <!--/ Text wrapper -->
+                            </div>
+                            <!--/ Column -->
+                        </div>
+                        <!--/ Wrapper (Small) -->
+                    </div>
+                    <!--/ Section -->
+
+                    <!-- Img Section -->
+                    <div class="section" style="margin-bottom: 0">
+                        <!-- Wrapper -->
+                        <div class="wrapper">
+                            <!-- Column -->
+                            <div class="c-col-6">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img loading="lazy"
+                                        src="images/folio/works/ricoh_web/ricoh_nav_original.jpg"
+                                        alt="Single Image"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Column -->
+                            <div class="c-col-6">
+                                <!-- Image Wrapper -->
+                                <div class="image-wrapper">
+                                    <img loading="lazy"
+                                        src="images/folio/works/ricoh_web/ricoh_newNav_screen1.jpg"
+                                        alt="Single Image"
+                                    />
+
+                            </div>
+                        <!--/ Column -->
+                        </div>
+                    <!-- Wrapper -->
+                    </div>
+                <!--/ Section -->
+
+                <!-- Section -->
+                <div class="section" style="margin-bottom: 0">
+                    <!-- Wrapper (Small) -->
+                    <div class="wrapper-small" style="margin-bottom: 0">
+                        <!-- Column -->
+                        <div class="c-col-12" style="margin-bottom: 0px">
+                            <!-- Text wrapper -->
+                            <div
+                                class="text-wrapper"
+                                style="margin-bottom: 80px"
+                            >
+
+
+                                <!--<h2 class="has-animation lines-fade-up">
+                                HCF Design System
+                                </h2>-->
+                                <p
+
+                                    class="big-p"
+                                >
+                                    After doing rounds of competitor research, I thought that turning the menu from a vertical design to a horizontal one might be the best to tackle this. The contents of the main navigation box could change dynamically depending on which navigation list item the user was hovering over. This created some room in the navigation box to add the underlying child categories, or to add more featured marketing content.
+
+                                </p>
+                                <p
+
+                                    class="big-p"
+                                >
+                                    Customers could now immediately read about the new category offerings and would be less confused as to the direction of their reliable business partner.
+                                </p>
+                            </div>
+                            <!--/ Text wrapper -->
+                        </div>
+                        <!--/ Column -->
+                    </div>
+                    <!--/ Wrapper (Small) -->
+                </div>
+                <!--/ Section -->
+
+                <!-- Section -->
+                <div class="section" style="margin-bottom: 0" id="grids">
+                    <!-- Wrapper (Small) -->
+                    <div class="wrapper-small" style="margin-bottom: 0">
+                        <!-- Column -->
+                        <div class="c-col-12" style="margin-bottom: 0px">
+                            <!-- Text wrapper -->
+                            <div
+                                class="text-wrapper"
+                                style="margin-bottom: 60px"
+                            >
+
+
+                                <h2 style="color: #cf142b;">
+                                    UI Enhancement - layout & design flexibility
+                                </h2>
+                                <p
+
+                                    class="big-p"
+                                >
+                                    One of the hurdles that we encountered as we started rolling out regionally was to do with the many different layout designs that we needed to migrate. We intended to standardise the layouts in terms of keeping our own modern templates so that the brand would have regional consistency, but at times the team was finding itself limited as we started to create & migrate different marketing campaigns which often had a requirement to stand out from the rest of the site. To help alleviate this, I first used our existing component library to design <a href="Ricoh_2_.html">fresh new templates</a> which could be easily reused throughout the region.
+                                </p>
+                                <p
+
+                                    class="big-p"
+                                    style="margin-bottom: 28px"
+                                >
+                                    In order to give more freedom of UI for our trusted designers, I understood from my experience as a developer that creating a 'difference' in layout design did not necessarily need to come from building a hundred new page components. What always made a difference was the grid and margins that each layout adhered to. Allowing more flexibility in layout columning would allow for a more interesting use of white space, different alignment of components including with asymetrical balance, would avoid repetition and allow some more movement into the designs.
+                                </p>
+
+
+                            </div>
+                            <!--/ Text wrapper -->
+                        </div>
+                        <!--/ Column -->
+                    </div>
+                    <!--/ Wrapper (Small) -->
+                </div>
+                <!--/ Section -->
+
+                <!-- Img Section -->
+                <div class="section" style="margin-bottom: 0">
+                    <!-- Wrapper -->
+                    <div class="wrapper" style="margin-bottom: 0">
+                        <!-- Column -->
+                        <div class="c-col-12">
+                            <!-- Image Wrapper -->
+                            <div class="image-wrapper">
+                                <img loading="lazy"
+                                    src="images/folio/works/ricoh_web/ricoh_newGuides_FA.webp"
+                                    alt="Single Image"
+                                />
+                            </div>
+                        </div>
+                        <!-- Column -->
+
+                </div>
+                <!-- Wrapper -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Section -->
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper (Small) -->
+                <div class="wrapper-small" style="margin-bottom: 0">
+                    <!-- Column -->
+                    <div class="c-col-12" style="margin-bottom: 0px">
+                        <!-- Text wrapper -->
+                        <div class="text-wrapper" style="margin-bottom: 80px">
+
+
+                            <!--<h2 class="has-animation lines-fade-up">
+                        HCF Design System
+                        </h2>-->
+                            <p
+                                class="big-p"
+                            >
+                                To achieve this I used the bootstrap css library as a kind of benchmark to design advanced layouts which allowed for 12 columns to design with. Previously, the desktop layout would only allow for set containers at full screen width, mid-width and then narrow containers (usually for text). All layouts were set within those parameters (see above).
+                            </p>
+
+                            <p
+
+                                class="big-p"
+                            >
+                                The majority of pages would still use the original templates provided as they did maintain a brand consistency and general tidiness, but where needed designers could now build pages which challenged the normal design structure for bespoke pages and campaigns. One of the most important use cases for the new columning options was the new main banner we designed which was eventually shown on all regional home page sites, using a 8 - 4 columning option to present multiple goal-oriented landing pages.
+                            </p>
+
+
+                        </div>
+                        <!--/ Text wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!--/ Wrapper (Small) -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Section -->
+            <div class="section" style="margin-bottom: 0" id="banner">
+                <!-- Wrapper (Small) -->
+                <div class="wrapper-small" style="margin-bottom: 0">
+                    <!-- Column -->
+                    <div class="c-col-12" style="margin-bottom: 0px">
+                        <!-- Text wrapper -->
+                        <div class="text-wrapper" style="margin-bottom: 80px">
+                            <div class="caption">
+                                <!--copy here -->
+                            </div>
+
+                            <h2 style="color: #cf142b;">
+                                Main banner redesign
+                            </h2>
+                            <p
+
+                                class="big-p"
+                            >
+                                Through our data analysis of visitors to our home pages, we were discovering that only the first full-width banner option on the home page was getting significant click-through traffic. Users were not taking the time to visit the second rotating carousel banner behind it, much less the third or fourth banners. Yet the business always had multiple goals and CTAs inserted throughout the site that they needed to direct users to.
+
+                            <p
+
+                                class="big-p"
+                            >
+                                We used the new 12-column layout option to design a new banner which still allowed for an 'essential' eye-catching banner image which would attract users on page load, but now marketing teams would have the option to add other campaigns or page banners vertically next to it which contained links to other important marketing CTAs.
+                            </p>
+
+
+                        </div>
+                        <!--/ Text wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!--/ Wrapper (Small) -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Img Section -->
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper -->
+                <div class="wrapper">
+                    <!-- Column -->
+                    <div class="c-col-12">
+                        <!-- Image Wrapper -->
+                        <div class="image-wrapper">
+                            <img loading="lazy"
+                                src="images/folio/works/ricoh_web/ricoh_newGuides_FA_2.jpg"
+                                alt="Single Image"
+                            />
+                        </div>
+                    </div>
+                    <!-- Column -->
+
+                </div>
+                <!-- Wrapper -->
+            </div>
+            <!--/ Section -->
+
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper (Small) -->
+                <div class="wrapper-small" style="margin-bottom: 0">
+                    <!-- Column -->
+                    <div class="c-col-12" style="margin-bottom: 0px">
+                        <!-- Text wrapper -->
+                        <div class="text-wrapper" style="margin-bottom: 80px">
+                            <div class="caption has-animation skew-up">
+                                <!--copy here -->
+                            </div>
+
+
+                            <p
+
+                                class="big-p"
+                            >
+                                We did run into a pain point where we found it difficult to design this banner for mobile responsive screens, especially as the original design included 3 (or more) vertical banners. After going through various design options, we found that limiting the vertical banners to 2 not only created a suitable amount of real estate for the imagery and copy, but allowed for a smooth vertical scrolling transition on mobile screens (see below).
+                            </p>
+                        </div>
+                        <!--/ Text wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!--/ Wrapper (Small) -->
+            </div>
+            <!--/ Section -->
+
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper (Small) -->
+                <div class="wrapper-small" style="margin-bottom: 0">
+                    <!-- Column -->
+                    <div class="c-col-12" style="margin-bottom: 0px">
+                        <!-- Text wrapper -->
+                        <div class="text-wrapper" style="margin-bottom: 80px">
+
+
+                            <h2 style="color: #cf142b;">
+                                Mobile responsive UX
+                            </h2>
+                            <p
+
+                                class="big-p"
+                            >
+                                An issue that we needed to address when migrating the legacy websites to Sitecore CMS was that many of the legacy websites were not built to be fully mobile responsive. As so much of our traffic now comes from devices rather than desktop screens, I took a long time to address layout, banner and even infographic redesigns for responsive layouts in the new sites.
+                            </p>
+                        </div>
+                        <!--/ Text wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!--/ Wrapper (Small) -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Img Section -->
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper -->
+                <div class="wrapper">
+                    <!-- Column -->
+                    <div class="c-col-4">
+                        <!-- Image Wrapper -->
+                        <div class="image-wrapper">
+                            <img loading="lazy"
+                                src="images/folio/works/ricoh_web/ricoh_home_mob.jpg"
+                                alt="Single Image"
+                            />
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="c-col-4">
+                        <!-- Image Wrapper -->
+                        <div class="image-wrapper">
+                            <img loading="lazy"
+                                src="images/folio/works/ricoh_web/ricoh_mobile_1.jpg"
+                                alt="Single Image"
+                            />
+                        </div>
+                        <!--/ Image Wrapper -->
+                    </div>
+                    <!--/ Column -->
+                    <div class="c-col-4">
+                        <!-- Image Wrapper -->
+                        <div class="image-wrapper">
+                            <img loading="lazy"
+                                src="images/folio/works/ricoh_web/ricoh_mobile_2.jpg"
+                                alt="Single Image"
+                            />
+                        </div>
+                        <!--/ Image Wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!-- Wrapper -->
+            </div>
+            <!--/ Section -->
+
+
+            <!-- Section -->
+            <div class="section" style="margin-bottom: 48px" id="pathAnalyser">
+                <!-- Wrapper (Small) -->
+                <div class="wrapper-small" style="margin-bottom: 0">
+                    <!-- Column -->
+                    <div class="c-col-12" style="margin-bottom: 0px">
+                        <!-- Text wrapper -->
+
+
+                            <h2 style="color: #cf142b;">
+                                User journeys and the Path Analyser
+                            </h2>
+                            <p
+
+                                class="big-p"
+                            >
+                                A great tool that Sitecore CMS offers is the ability to plan and track individual user journeys through the website. They are trailed from entry point through each page, tracked for which marketing goals they activate, how many engagement points they accrue from their interactions, and whether or not they trigger website form submits. Often the most valuable goals were set on the form's Thank you pages which are shown only after a lead is generated.
+                            </p>
+
+                            <p
+
+                                class="big-p"
+                            >
+                                Through this tool, I was able to map out and plan the journeys of different users and personas throughout the website. How should they access a particular CTA? Where is the best place to present them a form fill? How to guide them to more information about this product? Once we activated the Path Analyser, we were able to see through the engagement scores and paths that the users took whether or not our Information Architecture was successful in leading or attracting the customer to the stakeholders marketing goals.
+                            </p>
+
+                        </div>
+                        <!--/ Text wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!--/ Wrapper (Small) -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Img Section -->
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper -->
+                <div class="wrapper">
+                    <!-- Column -->
+                    <div class="c-col-12">
+                        <div class="image-wrapper">
+                            <img loading="lazy"
+                                src="images/folio/works/ricoh_web/ricoh_pathAnalyser_1.jpg"
+                                alt="Single Image"
+                            />
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+                <!-- Wrapper -->
+            </div>
+            <!--/ Section -->
+
+            <div class="section" style="margin-bottom: 0">
+                <!-- Wrapper (Small) -->
+                <div class="wrapper-small" style="margin-bottom: 0">
+                    <!-- Column -->
+                    <div class="c-col-12" style="margin-bottom: 0px">
+                        <!-- Text wrapper -->
+                        <div class="text-wrapper" style="margin-bottom: 80px">
+
+                            <ul>
+                                <li>If the path had low traffic and seemed unsuccessful, we could start to analyse why this was the case? Where were the users dropping off?</li>
+                                <li>Was a certain section missing a CTA, or was it displayed wrongly?</li>
+                                <li>Was the content not appealing enough?</li>
+                                <li>Was the architecture convoluted in some way so that the user simply got confused and gave up?</li>
+                                <li>Does the section or page need a design revamp to make it visually appealing?</li>
+                                <li>Was it simply a matter of more promotion for the section on the home page?</li>
+                                <li>At the least we could then pinpoint where the problem was, and research how to improve it. Also if a path was getting a lot of interest or traffic we would understand to optimise this path with other relevant CTAs to lead the user to other valuable content if interested.
+</li>
+
+                            </ul>
+                            <p
+
+                                class="big-p"
+                            >
+                                With the use of the Path Analyser, we could also start to understand how to build personas into the website. What was the most valuable path for each persona, and what kind of content could we personalise for them in order to guide them to their Persona website goals? We are able to structure the entire path or site so that the user has a personalised journey depending on the type of solution which they might be interested in.
+                                should be approached for their other products.
+                            </p>
+                        </div>
+                        <!--/ Text wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!--/ Wrapper (Small) -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Section -->
+            <div class="section" style="margin-bottom: 0" id="SEO">
+                <!-- Wrapper (Small) -->
+                <div class="wrapper-small" style="margin-bottom: 120px;">
+                    <!-- Column -->
+                    <div class="c-col-12" style="margin-bottom: 0px">
+                        <!-- Text wrapper -->
+                        <div class="text-wrapper" style="margin-bottom: 80px">
+
+
+                            <h2 style="color: #cf142b;">
+                                SEO enhancement project
+                            </h2>
+                            <p
+
+                                class="big-p"
+                            >
+                                After regional rollout was complete we found that certain regional websites were performing poorly in SEO visiblity. As SEO is a major part of modern UX, I was part of a project team to ensure that that this section was better taken care of and improved. We attacked this problem through a number of different tickets.
+
+                            <ul>
+                                <li>Created a new section on the Product Listing page for a keyword-filled description underneath the h1, which would dynamically change according to the category</li>
+                                <li>Organised a tool to import side-wide Meta Description through a spreadsheet so that page descriptions would remain up to date, and any pages missing one would have it added. Pages with repeating templates (eg, Products or Blog articles) may have descriptions drawn dynamically from in-page content</li>
+                                <li>Designed a tool to make sure that all inline imagery would automatically draw an Alt tag from the h1 of the page if it was missing</li>
+                                <li>Organised for schema data to be added through the back-end of the website, giving seach engines more accurate descriptions of on-page content</li>
+                                <li>Ensured that all pages unpublished from the live site have a redirect set on them so that search engines will not return 404 pages for content which no longer exists</li>
+                                <li>Designed a tool to automatically generate short URLs so that dates and query strings would no longer appear in website URLs.</li>
+                            </ul>
+
+                        </div>
+                        <!--/ Text wrapper -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!--/ Wrapper (Small) -->
+            </div>
+            <!--/ Section -->
+
+            <!-- Footer -->
+            <footer class="site-footer">
+                <!-- Fullwidth Wrapper -->
+                <div class="wrapper">
+                    <!-- Column -->
+                    <div class="c-col-12">
+                        <h1 class="thin" style="margin: 0">
+                            Want to get in touch? <br /><a
+                                class="underline"
+                                href="mailto:daniel@left-dial.com"
+                                >daniel@left-dial.com</a
+                            >
+                        </h1>
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!-- Fullwidth Wrapper -->
+
+                <!-- Fullwidth Wrapper -->
+                <div style="margin-bottom: 75px" class="wrapper-full">
+                    <div class="c-col-6 hide-mobile"></div>
+
+                    <!-- Column -->
+                    <div class="c-col-3 no-gap">
+                        <!-- <div class="caption">VISIT</div>
+                        <h5>
+                            32 Avenue of the Americas <br />New York, NY 10013
+                            <br />United States
+                        </h5> -->
+                    </div>
+                    <!--/ Column -->
+
+                    <!-- Column -->
+                    <div class="c-col-3 no-gap">
+                        <div class="caption">I'M ALSO HERE</div>
+
+                        <!-- Footer List -->
+                        <ul class="footer-list">
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/in/danielhandaru/"
+                                    target="_blank"
+                                    class="underline"
+                                    >Linkedin</a
+                                >
+                            </li>
+
+                            <li>
+                                <a
+                                    href="https://www.instagram.com/gridsanddots/?hl=en"
+                                    target="_blank"
+                                    class="underline"
+                                    >Instagram</a
+                                >
+                            </li>
+                            <li>
+                                <a href="index.html" class="underline"
+                                    >Go home</a
+                                >
+                            </li>
+                        </ul>
+                        <!-- Footer List -->
+                    </div>
+                    <!--/ Column -->
+                </div>
+                <!-- Fullwidth Wrapper -->
+            </footer>
+            <!--/ Footer -->
+        </div>
+        <!--/ Site Content -->
+
+        <script defer src="js/jquery.min.js"></script>
+        <script defer src="js/plugins.js"></script>
+        <script defer src="js/scripts.js"></script>
+        <script defer src="js/jquery.smoothState.js"></script>
+        <script defer src="js/page-transitions.js"></script>
+    </body>
+</html>
