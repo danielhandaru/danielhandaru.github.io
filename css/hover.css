@@ -396,6 +396,21 @@ mark.text-highlight {
 }
 
 /* ============================================================
+   Fix double underline on .underline links
+   ------------------------------------------------------------
+   Cygni's .underline pattern draws a colored bar via ::before,
+   but leaves the browser's default text-decoration: underline on
+   the <a> itself. Result: two underlines stacked (a thick colored
+   ::before bar + a thin default underline directly below the text).
+   The template's own a.underline:hover rule strips text-decoration
+   only on hover — that's why the double disappears when hovered.
+   Setting text-decoration: none at rest too leaves just the ::before.
+   ============================================================ */
+a.underline {
+    text-decoration: none;
+}
+
+/* ============================================================
    Case study body lists — promoted from inline <style> blocks
    ------------------------------------------------------------
    Each case study's inline <style> defines these rules, but smoothState
