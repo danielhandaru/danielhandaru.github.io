@@ -1779,6 +1779,13 @@ $(function () {
       },
 
       onAfter: function ($container, $newContent) {
+        // Disarm the stuck-transition safety net — smoothState delivered.
+        if (window.ptStuckTimer) {
+          clearTimeout(window.ptStuckTimer);
+          window.ptStuckTimer = null;
+        }
+        window.ptPendingHref = null;
+
         // Signal to keyframe 1's complete callback that we want keyframe 2 to run.
         // If keyframe 1 hasn't finished yet, this prevents the pause and lets the
         // timeline flow naturally into keyframe 2. If it has already paused, the
@@ -2213,6 +2220,13 @@ $(function () {
     },
     smoothState = $("#main").smoothState(options).data("smoothState");
 
+  // Safety-net timeout for stuck smoothState transitions. Cleared in onAfter
+  // when a transition completes normally. If the timer fires first, the user
+  // is stuck — we force a plain browser navigation to the target URL so they
+  // never sit on a black / empty screen.
+  window.ptStuckTimer = null;
+  window.ptPendingHref = null;
+
   $(".menu a")
     .not(".no-trans")
     .click(function (e) {
@@ -2229,6 +2243,18 @@ $(function () {
       $(".site-navigation").removeClass("nav-open");
       $(".menu-wrapper").css("visibility", "hidden");
 
+      // Arm the stuck-transition timer. onAfter clears this. If it fires,
+      // smoothState never completed and we bail out to a hard navigation.
+      if (window.ptStuckTimer) clearTimeout(window.ptStuckTimer);
+      window.ptPendingHref = href;
+      window.ptStuckTimer = setTimeout(function () {
+        // Only navigate if we're still on the source page. If URL already
+        // changed (transition succeeded but timer somehow lingered), do nothing.
+        if (window.ptPendingHref) {
+          window.location.href = window.ptPendingHref;
+        }
+      }, 3000);
+
       // Fallback: if smoothState isn't available or throws, fall back to a
       // hard navigation so the click always goes somewhere instead of leaving
       // the user on a stuck / empty page.
@@ -2237,9 +2263,11 @@ $(function () {
         if (content && typeof content.load === "function") {
           content.load(href);
         } else {
+          if (window.ptStuckTimer) clearTimeout(window.ptStuckTimer);
           window.location.href = href;
         }
       } catch (err) {
+        if (window.ptStuckTimer) clearTimeout(window.ptStuckTimer);
         window.location.href = href;
       }
     });
