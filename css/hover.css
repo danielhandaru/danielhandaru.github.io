@@ -407,6 +407,25 @@ body.is-home .home-button {
 }
 
 /* ============================================================
+   Fullscreen nav menu — no underline on hover
+   ------------------------------------------------------------
+   Menu items and the widget links (mail / linkedin / instagram /
+   spotify / Grids & Dots / email) inherit the global
+   a { text-decoration: underline } from each page's inline style.
+   On hover the color changes to the yellow/accent, but the underline
+   stays and looks scrappy against the fullscreen menu design.
+   Strip text-decoration for anything inside the menu overlay at
+   every state, so only the color change reads as the hover.
+   !important beats per-page inline a:hover rules that redeclare
+   color and inherit decoration.
+   ============================================================ */
+.menu-wrapper a,
+.menu-wrapper a:hover,
+.menu-wrapper a:focus-visible {
+    text-decoration: none !important;
+}
+
+/* ============================================================
    Fix double underline on .underline links
    ------------------------------------------------------------
    Cygni's .underline pattern draws a colored bar via ::before,
