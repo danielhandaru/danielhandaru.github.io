@@ -467,6 +467,15 @@ a.underline {
     display: none !important;
 }
 
+/* Belt-and-braces: if any .menu-toggle contains .toggle-lineB spans (HTML-side icon),
+   hide the JS-added .toggle-line spans regardless of whether .new-menu is on the
+   parent. Catches header-preservation edge cases across smoothState nav where the
+   header may have swapped class names but still carries both span sets. */
+.menu-toggle:has(> .toggle-lineB) > .toggle-line,
+.menu-toggle:has(> .toggle-lineB) > .toggle-line-in {
+    display: none !important;
+}
+
 /* ============================================================
    Mobile: hide the desktop hover-image previews in the
    portfolio showcase on index.html
