@@ -409,48 +409,6 @@
 
         ////////// Page Loader /////////
 
-        // Gate the 3-second cygni-loader (00→99 counter) to first-visit-per-tab
-        // via sessionStorage. Since smoothState was removed, every menu click is
-        // now a full page load — without this gate the loader would fire on every
-        // navigation and add 3s to each click. sessionStorage is per-tab-session,
-        // so opening the site fresh in a new tab still gets the branded loader
-        // moment, and clicking around within the site skips straight to content.
-        var loaderAlreadyShown = false;
-        try {
-            loaderAlreadyShown = sessionStorage.getItem('cd-loader-shown') === '1';
-        } catch (e) {
-            // Private-mode sessionStorage can throw — fail open, show loader.
-        }
-
-        if (loaderAlreadyShown) {
-            // Fast path: hide loader chrome and jump straight to the loaded state.
-            // IMPORTANT — do NOT return here. All the showcase / big-slider /
-            // cygni-horizontal init below lives inside this same window.load
-            // handler; an early return would leave the homepage portfolio menu
-            // completely blank on the second-plus page load per tab session.
-            $('.cygni-loader, .lines').hide();
-            $('#main').addClass('loaded');
-            try {
-                var peScrollFast = new LocomotiveScroll({
-                    el: document.querySelector('#main'),
-                    smooth: false,
-                });
-                window.peScroll = peScrollFast;
-            } catch (e) {}
-            $('.toggle-line').addClass('toggle-line-in');
-            $('.site-branding img').addClass('logo-in');
-            $('.menu-item-active').addClass('menu-item-hover');
-        } else {
-            // First visit this session — record it, then run the branded loader.
-            try { sessionStorage.setItem('cd-loader-shown', '1'); } catch (e) {}
-            runCygniLoader();
-        }
-
-        // Wrap the original anime.js loader timeline so we only invoke it on
-        // first-visit-per-session. Everything below the closing brace of this
-        // function still executes on every load (showcase init lives there).
-        function runCygniLoader() {
-
         var loadingAn = anime({
             targets: '.line',
             height: '100%',
@@ -549,8 +507,6 @@
 
             }
         })
-
-        } // /runCygniLoader
 
         ////////// Page Loader /////////
 

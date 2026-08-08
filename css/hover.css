@@ -13,27 +13,6 @@
    homepage portfolio showcase behaviour is unaffected.
    ============================================================ */
 
-/* ============================================================
-   Plain-navigation page entry animation
-   ------------------------------------------------------------
-   Replaces the old smoothState LOADING-text transition. On every
-   fresh page load the body fades in and settles up 6px over
-   ~250ms. Zero JS, purely browser-driven. Runs once per load.
-   prefers-reduced-motion respected via @media below.
-   ============================================================ */
-body {
-    animation: pageIn .25s ease-out both;
-}
-
-@keyframes pageIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    body { animation: none; }
-}
-
 :root {
     --accent: #c4604a;
     /* Light yellow marker for scroll-triggered text highlights — classic
