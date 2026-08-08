@@ -157,6 +157,21 @@ mark.text-highlight {
 }
 
 /* ============================================================
+   .project-work — sub-head above the project title on case
+   studies. Match the homepage .caption styling (thin terracotta
+   underline, 6px offset, weight 600) so the label above "Isuzu
+   Ute", "HCF Marketplace", etc reads as a matched pair with the
+   "SO WHO AM I?" / "WHAT DO I DO?" captions on index.
+   ============================================================ */
+.project-work {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
+    font-weight: 600;
+}
+
+/* ============================================================
    .project-title — Editorial New serif on case study pages
    ------------------------------------------------------------
    Case study landing pages (HCF_, CAANZ_, Ricoh_*, isuzu_, CG_,
@@ -395,8 +410,11 @@ body.is-home .home-button {
    (HCF_, HCF, CAANZ_, CAANZ, isuzu_ don't have a base rule, so their <a>
    was falling back to the browser-default blue underlined link.) */
 .home-button a {
-    color: #6d6d6d;
-    text-decoration: underline;
+    /* Match the hamburger bars (.toggle-lineB { background: #000 }) and the
+       CONTACT label (inherits body color) so the header's left + right
+       elements read as a matched pair rather than two visual weights. */
+    color: #000;
+    text-decoration: none;
 }
 
 /* Defeat the inline a:hover { color: #ede574 } yellow on case study
@@ -404,6 +422,86 @@ body.is-home .home-button {
 .home-button a:hover,
 .home-button a:focus-visible {
     color: var(--accent) !important;
+}
+
+/* ============================================================
+   .section-jumps — in-page section navigation for case studies
+   ------------------------------------------------------------
+   Replaces the old .button jump-link pattern on case study pages.
+   Inline row of understated text links with a thin rule under
+   each. On hover the yellow highlight from --highlight sweeps in
+   behind the text (same visual language as .text-highlight in
+   body copy) and the rest underline fades out. Editorial rather
+   than UI-flavoured.
+   ============================================================ */
+.section-jumps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    /* clear:both so we drop below any preceding float:left .c-col-* column
+       (Cygni's grid). Without this, when .section-jumps sits AFTER a
+       floated column inside .wrapper-small, it gets squeezed into whatever
+       narrow gutter is left on the right. clear:both forces it onto its own
+       row flush with wrapper-small's left edge — no c-col-12 wrap needed. */
+    clear: both;
+    width: 100%;
+    /* Top margin so the jumps breathe from the paragraph above them,
+       especially on mobile where the intro paragraph lands right on top
+       of the first link row without it. */
+    margin: 32px 0;
+    padding: 0;
+    list-style: none;
+}
+@media (max-width: 850px) {
+    .section-jumps {
+        /* Extra breathing room on mobile — intro paragraph, then a proper
+           break, then the jumps. Also loosen the row-gap so the wrapped
+           second row doesn't crowd the first. */
+        margin: 40px 0;
+        gap: 20px 28px;
+    }
+}
+.section-jumps li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.section-jumps li::marker { content: none; }
+.section-jumps a {
+    position: relative;
+    display: inline-block;
+    padding: 2px 0;
+    text-decoration: none !important;
+    color: #121212;
+    font-size: 16px;
+    line-height: 1.3;
+    /* Yellow highlight sweep — matches .text-highlight in body copy */
+    background-image: linear-gradient(120deg, var(--highlight) 0%, var(--highlight) 100%);
+    background-repeat: no-repeat;
+    background-size: 0% 38%;
+    background-position: 0 88%;
+    transition: background-size .5s cubic-bezier(.215,.61,.355,1), color .25s ease;
+}
+.section-jumps a::after {
+    /* thin rest-state underline */
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1px;
+    background: currentColor;
+    opacity: .4;
+    transition: opacity .25s ease;
+}
+.section-jumps a:hover,
+.section-jumps a:focus-visible {
+    background-size: 100% 38%;
+    color: #121212;
+}
+.section-jumps a:hover::after,
+.section-jumps a:focus-visible::after {
+    opacity: 0;
 }
 
 /* ============================================================
