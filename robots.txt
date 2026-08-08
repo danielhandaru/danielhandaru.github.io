@@ -7,4 +7,4 @@ Allow: /
 # Block the originals backup folder in case it's ever uploaded
 Disallow: /images_backup/
 
-Sitemap: https://left-dial.com/sitemap.xml
+Sitemap: https://danielhandaru.github.io/sitemap.xml
