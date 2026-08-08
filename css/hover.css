@@ -247,6 +247,10 @@ mark.text-highlight {
        (top: 10vh). This handles HCF.html, CAANZ.html, CAANZ_.html which use that
        toggle variant. */
     top: 10vh;
+    /* Match .new-menu / .menu-toggle z-index (113) so the HOME link sits above
+       the project-header colored-overlay hero images on HCF_ / isuzu_ / etc.
+       Without this the link is painted underneath the tinted hero and invisible. */
+    z-index: 113;
 }
 
 /* On pages that override the menu toggle via the .new-menu variant
@@ -389,6 +393,30 @@ mark.text-highlight {
 .home-button a:hover,
 .home-button a:focus-visible {
     color: var(--accent) !important;
+}
+
+/* ============================================================
+   Case study body lists — promoted from inline <style> blocks
+   ------------------------------------------------------------
+   Each case study's inline <style> defines these rules, but smoothState
+   only swaps #main content, not <head>. So navigating from another page
+   leaves the previous page's <style> in the head and the new page's list
+   rules missing — bullets and indentation disappear until hard refresh.
+   Loading these from hover.css (which is always present) fixes it.
+   Scoped to .single-project so we don't affect the nav menu <ul><li>.
+   ============================================================ */
+.single-project ul {
+    margin-left: 20px;
+}
+.single-project li {
+    padding-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #6d6d6d;
+    list-style-type: square;
+}
+.single-project li::marker {
+    color: #e0004d;
 }
 
 /* ============================================================
