@@ -425,6 +425,31 @@ body.is-home .home-button {
 }
 
 /* ============================================================
+   .section-jumps-label — small editorial header above
+   .section-jumps ("PROJECTS"). Serif, uppercase, tracked, muted
+   grey — same treatment used in the TOC prototype comparison.
+   ============================================================ */
+.section-jumps-label {
+    font-family: 'Editorial New', 'Times New Roman', serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #999;
+    margin: 32px 0 8px;
+    padding: 0;
+}
+@media (max-width: 850px) {
+    .section-jumps-label {
+        margin: 40px 0 6px;
+    }
+}
+/* When paired with .section-jumps directly below, collapse the
+   ul's top margin so the label + list read as one unit. */
+.section-jumps-label + .section-jumps {
+    margin-top: 0;
+}
+
+/* ============================================================
    .section-jumps — in-page section navigation for case studies
    ------------------------------------------------------------
    Replaces the old .button jump-link pattern on case study pages.
@@ -449,7 +474,14 @@ body.is-home .home-button {
        especially on mobile where the intro paragraph lands right on top
        of the first link row without it. */
     margin: 32px 0;
-    padding: 0;
+    /* !important beats the browser-default padding-inline-start: 40px
+       on <ul>, plus any inline-stylesheet ul { margin-left: 20px } that
+       Cygni case-study pages ship with. Container-level alignment is
+       handled by wrapping in .c-col-12 in the HTML (matches the paragraph
+       column's 15px gutter). */
+    padding: 0 !important;
+    padding-inline-start: 0 !important;
+    margin-left: 0 !important;
     list-style: none;
 }
 @media (max-width: 850px) {
