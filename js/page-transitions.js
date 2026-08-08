@@ -2217,8 +2217,30 @@ $(function () {
     .not(".no-trans")
     .click(function (e) {
       e.preventDefault();
-      var content = $("#main").smoothState().data("smoothState");
       var href = $(this).attr("href");
-      content.load(href);
+
+      // Close menu overlays IMMEDIATELY so the dark .menu-ov panels can't stay
+      // stuck covering the screen if smoothState hangs mid-transition. Was
+      // producing a black-page state on some case-study → case-study navs
+      // where onAfter's cleanup never ran.
+      $(".menu-ov").removeClass("menu-ov-in");
+      $(".menu-toggle").removeClass("is-active").data("clicks", false);
+      $(".site-header").removeClass("dark-nav-active light-nav-active");
+      $(".site-navigation").removeClass("nav-open");
+      $(".menu-wrapper").css("visibility", "hidden");
+
+      // Fallback: if smoothState isn't available or throws, fall back to a
+      // hard navigation so the click always goes somewhere instead of leaving
+      // the user on a stuck / empty page.
+      try {
+        var content = $("#main").smoothState().data("smoothState");
+        if (content && typeof content.load === "function") {
+          content.load(href);
+        } else {
+          window.location.href = href;
+        }
+      } catch (err) {
+        window.location.href = href;
+      }
     });
 });
