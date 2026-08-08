@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>grids &amp; dots — Listen</title>
+  <meta name="description" content="Stream and follow Grids &amp; Dots on all platforms.">
+  <link rel="shortcut icon" type="image/icon" href="img/favicon_3.ico"/>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: #f0ece4;
+      font-family: 'Open Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── HERO ───────────────────────────────────────────── */
+    .hero {
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero__img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0) 40%,
+        rgba(0,0,0,0.72) 100%
+      );
+    }
+
+    .hero__label {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* ── ARTIST INFO ────────────────────────────────────── */
+    .artist-info {
+      width: 100%;
+      max-width: 480px;
+      padding: 26px 24px 18px;
+      background: #f0ece4;
+    }
+
+    .artist-name {
+      font-family: 'Oswald', sans-serif;
+      font-size: 36px;
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: lowercase;
+      color: #1b1b1b;
+      line-height: 1;
+    }
+
+    .artist-name span {
+      color: #2ac4b7;
+    }
+
+    .artist-tag {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      margin-top: 6px;
+    }
+
+    /* ── LINKS CARD ─────────────────────────────────────── */
+    .links-card {
+      width: 100%;
+      max-width: 480px;
+      background: #fff;
+      border-radius: 16px 16px 0 0;
+      padding: 10px 0 40px;
+      margin-top: 4px;
+      flex: 1;
+    }
+
+    /* ── INDIVIDUAL LINK ROW ────────────────────────────── */
+    .link-row {
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      border-bottom: 1px solid #f0ece4;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+
+    .link-row:last-child { border-bottom: none; }
+
+    .link-row:hover,
+    .link-row:focus {
+      background: #f9f7f4;
+      outline: none;
+    }
+
+    .link-row__icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 14px;
+      my: 14px;
+    }
+
+    .link-row__text {
+      flex: 1;
+      padding: 18px 0;
+    }
+
+    .link-row__platform {
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #1b1b1b;
+      line-height: 1.1;
+    }
+
+    .link-row__action {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 11px;
+      color: #aaa;
+      margin-top: 2px;
+    }
+
+    .link-row__btn {
+      flex-shrink: 0;
+      background: transparent;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #555;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .link-row:hover .link-row__btn {
+      border-color: #2ac4b7;
+      color: #2ac4b7;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────── */
+    .footer {
+      width: 100%;
+      max-width: 480px;
+      background: #fff;
+      padding: 10px 24px 30px;
+      text-align: center;
+    }
+
+    .footer__text {
+      font-size: 11px;
+      color: #bbb;
+      letter-spacing: 1px;
+    }
+
+    .footer__text a {
+      color: #2ac4b7;
+      text-decoration: none;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────── */
+    @media (min-width: 480px) {
+      body { padding-top: 32px; }
+
+      .hero {
+        border-radius: 16px 16px 0 0;
+        overflow: hidden;
+      }
+
+      .links-card { border-radius: 0; }
+    }
+
+    @media (max-width: 360px) {
+      .artist-name { font-size: 28px; }
+      .link-row__btn { padding: 7px 10px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO PHOTO -->
+  <div class="hero">
+    <img class="hero__img"
+         src="img/banner_EP.jpg"
+         alt="Grids &amp; Dots">
+    <div class="hero__overlay"></div>
+    <div class="hero__label">gridsanddots.com</div>
+  </div>
+
+  <!-- ARTIST INFO -->
+  <div class="artist-info">
+    <div class="artist-name">grids <span>&amp;</span> dots</div>
+    <div class="artist-tag">Sydney · Indie / Shoegaze</div>
+  </div>
+
+  <!-- LINKS CARD -->
+  <div class="links-card">
+
+    <!-- Spotify -->
+    <a class="link-row" href="https://open.spotify.com/artist/7ba827SJSUU4l3AORy4Doy" target="_blank" rel="noopener">
+      <div class="link-row__icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="14" fill="#1DB954"/>
+          <path d="M20.3 12.6c-3.5-2.1-9.3-2.3-12.6-1.3-.5.2-1.1-.2-1.2-.7-.2-.5.2-1.1.7-1.2 3.8-1.2 10.2-1 14.1 1.5.5.3.6.9.3 1.4-.3.4-.9.5-1.3.3zm-.1 3.2c-.3.4-.8.6-1.2.3-2.9-1.8-7.3-2.3-10.7-1.3-.5.1-1-.2-1.1-.6-.1-.5.2-1 .6-1.1 3.9-1.2 8.7-.6 12 1.4.4.3.5.9.4 1.3zm-1.4 3.1c-.2.3-.6.5-1 .2-2.5-1.5-5.7-1.9-9.4-1-.4.1-.8-.2-.9-.6-.1-.4.2-.8.6-.9 4.1-.9 7.6-.5 10.5 1.1.3.2.4.7.2 1.2z" fill="white"/>
+        </svg>
+      </div>
+      <div class="link-row__text">
+        <div class="link-row__platform">Spotify</div>
+        <div class="link-row__action">Stream our music</div>
+      </div>
+      <div class="link-row__btn">Play</div>
+    </a>
+
+    <!-- Apple Music -->
+    <a class="link-row" href="https://music.apple.com/au/artist/grids-dots/1487287711" target="_blank" rel="noopener">
+      <div class="link-row__icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="14" fill="#FC3C44"/>
+          <path d="M18.5 8h-5.6c-.3 0-.5.2-.5.5v7.8c-.4-.2-.9-.3-1.4-.3-1.5 0-2.6 1-2.6 2.3s1.1 2.3 2.6 2.3 2.6-1 2.6-2.3V12h4.1v3.3c-.4-.2-.9-.3-1.4-.3-1.5 0-2.6 1-2.6 2.3s1.1 2.3 2.6 2.3 2.6-1 2.6-2.3V8.5c0-.3-.2-.5-.4-.5z" fill="white"/>
+        </svg>
+      </div>
+      <div class="link-row__text">
+        <div class="link-row__platform">Apple Music</div>
+        <div class="link-row__action">Listen on Apple Music</div>
+      </div>
+      <div class="link-row__btn">Play</div>
+    </a>
+
+    <!-- YouTube -->
+    <a class="link-row" href="https://www.youtube.com/@gridsanddots7805" target="_blank" rel="noopener">
+      <div class="link-row__icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="14" fill="#FF0000"/>
+          <path d="M21.6 10.5c-.2-.8-.9-1.4-1.7-1.6C18.5 8.5 14 8.5 14 8.5s-4.5 0-5.9.4c-.8.2-1.5.8-1.7 1.6C6 12 6 14 6 14s0 2 .4 3.5c.2.8.9 1.4 1.7 1.6 1.4.4 5.9.4 5.9.4s4.5 0 5.9-.4c.8-.2 1.5-.8 1.7-1.6.4-1.5.4-3.5.4-3.5s0-2-.4-3.5zm-8.8 5.6v-4.2l3.9 2.1-3.9 2.1z" fill="white"/>
+        </svg>
+      </div>
+      <div class="link-row__text">
+        <div class="link-row__platform">YouTube</div>
+        <div class="link-row__action">Watch our videos</div>
+      </div>
+      <div class="link-row__btn">Watch</div>
+    </a>
+
+    <!-- TikTok -->
+    <a class="link-row" href="https://www.tiktok.com/@grids.dots" target="_blank" rel="noopener">
+      <div class="link-row__icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="14" fill="#010101"/>
+          <path d="M19.5 11.5c-1.1 0-2-.9-2-2V8h-2v8.5c0 .8-.7 1.5-1.5 1.5s-1.5-.7-1.5-1.5.7-1.5 1.5-1.5c.2 0 .3 0 .5.1V13c-.2 0-.3-.1-.5-.1-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5v-4.2c.7.5 1.6.8 2.5.8v-2c-.2.5-.5.5-.5.5z" fill="white"/>
+          <path d="M18 10.3c.5.4 1.1.7 1.7.7v-1.5c-.3 0-.6-.1-.9-.2-.2.4-.5.8-.8 1z" fill="#69C9D0"/>
+          <path d="M19.7 9.5v1.5c-.6 0-1.2-.3-1.7-.7.3-.2.6-.5.8-1 .3.1.6.2.9.2zm-2.2 1.3c-.9-.5-1.5-1.3-1.7-2.3h-1.3v8.5c0 .8-.7 1.5-1.5 1.5s-1.5-.7-1.5-1.5.7-1.5 1.5-1.5c.2 0 .3 0 .5.1V13c-.2 0-.3-.1-.5-.1-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5v-4.2c.4.2.7.4 1 .6v-1.7c-.1-.1-.3-.2-.5-.3z" fill="#EE1D52"/>
+        </svg>
+      </div>
+      <div class="link-row__text">
+        <div class="link-row__platform">TikTok</div>
+        <div class="link-row__action">Follow us on TikTok</div>
+      </div>
+      <div class="link-row__btn">Follow</div>
+    </a>
+
+    <!-- Instagram -->
+    <a class="link-row" href="https://www.instagram.com/gridsanddots" target="_blank" rel="noopener">
+      <div class="link-row__icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="ig-grad" cx="30%" cy="107%" r="130%">
+              <stop offset="0%" stop-color="#fdf497"/>
+              <stop offset="5%" stop-color="#fdf497"/>
+              <stop offset="45%" stop-color="#fd5949"/>
+              <stop offset="60%" stop-color="#d6249f"/>
+              <stop offset="90%" stop-color="#285AEB"/>
+            </radialGradient>
+          </defs>
+          <circle cx="14" cy="14" r="14" fill="url(#ig-grad)"/>
+          <rect x="8" y="8" width="12" height="12" rx="3.5" stroke="white" stroke-width="1.5" fill="none"/>
+          <circle cx="14" cy="14" r="3" stroke="white" stroke-width="1.5" fill="none"/>
+          <circle cx="18" cy="10" r="1" fill="white"/>
+        </svg>
+      </div>
+      <div class="link-row__text">
+        <div class="link-row__platform">Instagram</div>
+        <div class="link-row__action">Behind the scenes</div>
+      </div>
+      <div class="link-row__btn">Follow</div>
+    </a>
+
+    <!-- Bandcamp -->
+    <a class="link-row" href="https://gridsanddots.bandcamp.com/" target="_blank" rel="noopener">
+      <div class="link-row__icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="14" fill="#1DA0C3"/>
+          <path d="M7 17l5.5-6h8.5l-5.5 6z" fill="white"/>
+        </svg>
+      </div>
+      <div class="link-row__text">
+        <div class="link-row__platform">Bandcamp</div>
+        <div class="link-row__action">Buy &amp; download</div>
+      </div>
+      <div class="link-row__btn">Shop</div>
+    </a>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p class="footer__text">
+      <a href="http://gridsanddots.com">gridsanddots.com</a>
+    </p>
+  </div>
+
+</body>
+</html>
