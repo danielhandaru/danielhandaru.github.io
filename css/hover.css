@@ -476,6 +476,13 @@ a.underline {
     display: none !important;
 }
 
+/* Nuclear fallback: any .toggle-line past the second one is a duplicate from a
+   re-firing prepend and should be hidden. Only two hamburger lines should ever
+   render inside a .menu-toggle. Paired with the JS idempotency fix in scripts.js. */
+.menu-toggle > .toggle-line:nth-of-type(n+3) {
+    display: none !important;
+}
+
 /* ============================================================
    Mobile: hide the desktop hover-image previews in the
    portfolio showcase on index.html

@@ -163,6 +163,13 @@
 
     /* Menu Toggle Hamburger */
 
+    // Idempotent: strip any pre-existing JS-added .toggle-line spans BEFORE prepending
+    // fresh ones. Without this, if scripts.js runs more than once in a session
+    // (e.g., under some smoothState re-entry paths), we accumulate 4 / 6 / 8 spans
+    // and end up with a double hamburger in the header even on pages that had a
+    // single-hamburger HTML variant. The .toggle-lineB spans (HTML-authored on
+    // .new-menu pages) are untouched.
+    $('.menu-toggle .toggle-line').remove();
     $('.menu-toggle').prepend('<span class="toggle-line toggle-line-1"></span><span class="toggle-line toggle-line-2"></span>')
 
     // Show the hamburger immediately so it is not gated on window.load + loader animation.
