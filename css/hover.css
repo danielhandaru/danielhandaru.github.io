@@ -261,6 +261,17 @@ mark.text-highlight {
     top: 56px;
 }
 
+/* Hide the HOME link when we're actually ON index.html — index has
+   <body id="home"> so this selector fires only there. index needs the
+   home-button element in the DOM so that after a smoothState navigation
+   AWAY from index (where the header is preserved), the HOME link appears
+   on the destination case study. Without this, index → Chartered/HCF_/etc
+   would show no HOME link because the source page's header (which had none)
+   is what stays in the DOM. */
+body#home .home-button {
+    display: none;
+}
+
 /* Hide the HOME link on mobile — the burger menu's "Home" item is enough,
    and the absolute-positioned link tends to collide with the mobile header. */
 @media (max-width: 850px) {
