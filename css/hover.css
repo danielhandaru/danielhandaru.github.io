@@ -447,8 +447,13 @@ a.underline {
    Hide the JS-added .toggle-line spans specifically on .new-menu
    variants; the .toggle-lineB spans handle the icon.
    ============================================================ */
-.new-menu .toggle-line {
-    display: none;
+.new-menu .toggle-line,
+.new-menu .toggle-line-in {
+    /* !important + covering both classes because case-study inline styles
+       have .is-active .toggle-line-in { visibility: visible } which fights
+       our fix when the menu opens. Without this the second hamburger reappears
+       as an X overlay when the menu is toggled, and can also intercept clicks. */
+    display: none !important;
 }
 
 /* ============================================================
