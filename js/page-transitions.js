@@ -1779,13 +1779,6 @@ $(function () {
       },
 
       onAfter: function ($container, $newContent) {
-        // Disarm the stuck-transition safety net — smoothState delivered.
-        if (window.ptStuckTimer) {
-          clearTimeout(window.ptStuckTimer);
-          window.ptStuckTimer = null;
-        }
-        window.ptPendingHref = null;
-
         // Signal to keyframe 1's complete callback that we want keyframe 2 to run.
         // If keyframe 1 hasn't finished yet, this prevents the pause and lets the
         // timeline flow naturally into keyframe 2. If it has already paused, the
@@ -2220,55 +2213,25 @@ $(function () {
     },
     smoothState = $("#main").smoothState(options).data("smoothState");
 
-  // Safety-net timeout for stuck smoothState transitions. Cleared in onAfter
-  // when a transition completes normally. If the timer fires first, the user
-  // is stuck — we force a plain browser navigation to the target URL so they
-  // never sit on a black / empty screen.
-  window.ptStuckTimer = null;
-  window.ptPendingHref = null;
-
+  // Menu links use PLAIN browser navigation, not smoothState. The AJAX
+  // transition was intractably flaky (menu overlays would stay stuck covering
+  // the screen when onAfter didn't fire, producing a black page). Full page
+  // loads are fast on GitHub Pages, and Cygni's cygni-loader fires on every
+  // fresh page load via $(window).on('load') in scripts.js — so users still
+  // get the branded LOADING moment on every menu navigation. No preventDefault
+  // means the anchor's href handles navigation natively.
+  //
+  // We still close the menu overlays cosmetically before the browser unloads
+  // the page, so if there's any lag between click and page-unload the user
+  // sees the menu going away instead of covering the screen.
   $(".menu a")
     .not(".no-trans")
-    .click(function (e) {
-      e.preventDefault();
-      var href = $(this).attr("href");
-
-      // Close menu overlays IMMEDIATELY so the dark .menu-ov panels can't stay
-      // stuck covering the screen if smoothState hangs mid-transition. Was
-      // producing a black-page state on some case-study → case-study navs
-      // where onAfter's cleanup never ran.
+    .click(function () {
       $(".menu-ov").removeClass("menu-ov-in");
       $(".menu-toggle").removeClass("is-active").data("clicks", false);
       $(".site-header").removeClass("dark-nav-active light-nav-active");
       $(".site-navigation").removeClass("nav-open");
       $(".menu-wrapper").css("visibility", "hidden");
-
-      // Arm the stuck-transition timer. onAfter clears this. If it fires,
-      // smoothState never completed and we bail out to a hard navigation.
-      if (window.ptStuckTimer) clearTimeout(window.ptStuckTimer);
-      window.ptPendingHref = href;
-      window.ptStuckTimer = setTimeout(function () {
-        // Only navigate if we're still on the source page. If URL already
-        // changed (transition succeeded but timer somehow lingered), do nothing.
-        if (window.ptPendingHref) {
-          window.location.href = window.ptPendingHref;
-        }
-      }, 3000);
-
-      // Fallback: if smoothState isn't available or throws, fall back to a
-      // hard navigation so the click always goes somewhere instead of leaving
-      // the user on a stuck / empty page.
-      try {
-        var content = $("#main").smoothState().data("smoothState");
-        if (content && typeof content.load === "function") {
-          content.load(href);
-        } else {
-          if (window.ptStuckTimer) clearTimeout(window.ptStuckTimer);
-          window.location.href = href;
-        }
-      } catch (err) {
-        if (window.ptStuckTimer) clearTimeout(window.ptStuckTimer);
-        window.location.href = href;
-      }
+      // No e.preventDefault() — let the browser follow the href naturally.
     });
 });
