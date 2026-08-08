@@ -2194,6 +2194,12 @@ $(function () {
 
         // Spotify player is index-only. Mount when navigating TO index,
         // dismount when navigating AWAY from index.
+        // Toggle body.is-home for the new URL so CSS rules relying on it
+        // (e.g. hiding the HOME link on index) match the actual current page.
+        if (typeof window.updateHomeBodyClass === "function") {
+          window.updateHomeBodyClass();
+        }
+
         if (typeof window.isIndexPage === "function" && window.isIndexPage()) {
           if (typeof window.initSpotifyPlayer === "function") {
             setTimeout(window.initSpotifyPlayer, 1500);

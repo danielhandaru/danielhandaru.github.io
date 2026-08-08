@@ -268,7 +268,7 @@ mark.text-highlight {
    on the destination case study. Without this, index → Chartered/HCF_/etc
    would show no HOME link because the source page's header (which had none)
    is what stays in the DOM. */
-body#home .home-button {
+body.is-home .home-button {
     display: none;
 }
 

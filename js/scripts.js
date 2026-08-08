@@ -2628,6 +2628,22 @@
         return p === '/' || p === '' || /\/index\.html$/i.test(p);
     };
 
+    // Toggle body.is-home based on the current URL. Called on initial load
+    // and after every smoothState transition (from page-transitions.js onAfter).
+    // The <body id="home"> attribute on index.html is preserved across
+    // smoothState navigations (only #main is swapped), which was causing the
+    // body#home CSS rule to keep hiding the HOME link on case studies when the
+    // session started at index. A dynamically-managed class avoids that trap.
+    window.updateHomeBodyClass = function () {
+        if (window.isIndexPage()) {
+            document.body.classList.add('is-home');
+        } else {
+            document.body.classList.remove('is-home');
+        }
+    };
+    // Run once at initial load so the class is correct before any nav.
+    window.updateHomeBodyClass();
+
     // Tear the player down (used when navigating away from index via smoothState).
     window.dismountSpotifyPlayer = function () {
         var existing = document.querySelector('.spotify-sticky');
