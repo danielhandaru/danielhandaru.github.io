@@ -424,6 +424,10 @@
 
         if (loaderAlreadyShown) {
             // Fast path: hide loader chrome and jump straight to the loaded state.
+            // IMPORTANT — do NOT return here. All the showcase / big-slider /
+            // cygni-horizontal init below lives inside this same window.load
+            // handler; an early return would leave the homepage portfolio menu
+            // completely blank on the second-plus page load per tab session.
             $('.cygni-loader, .lines').hide();
             $('#main').addClass('loaded');
             try {
@@ -436,11 +440,16 @@
             $('.toggle-line').addClass('toggle-line-in');
             $('.site-branding img').addClass('logo-in');
             $('.menu-item-active').addClass('menu-item-hover');
-            return; // skip the anime.js loader timeline below
+        } else {
+            // First visit this session — record it, then run the branded loader.
+            try { sessionStorage.setItem('cd-loader-shown', '1'); } catch (e) {}
+            runCygniLoader();
         }
 
-        // First visit this session — record it, then run the branded loader.
-        try { sessionStorage.setItem('cd-loader-shown', '1'); } catch (e) {}
+        // Wrap the original anime.js loader timeline so we only invoke it on
+        // first-visit-per-session. Everything below the closing brace of this
+        // function still executes on every load (showcase init lives there).
+        function runCygniLoader() {
 
         var loadingAn = anime({
             targets: '.line',
@@ -540,6 +549,8 @@
 
             }
         })
+
+        } // /runCygniLoader
 
         ////////// Page Loader /////////
 
