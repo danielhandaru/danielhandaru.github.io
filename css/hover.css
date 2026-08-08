@@ -392,6 +392,23 @@ mark.text-highlight {
 }
 
 /* ============================================================
+   Fix double hamburger icon on .new-menu case study pages
+   ------------------------------------------------------------
+   scripts.js line 166 unconditionally prepends two .toggle-line
+   spans to every .menu-toggle element. On case study pages using
+   the .new-menu variant (Chartered, HCF_, Ricoh_1_, Ricoh_2_,
+   Russell_, isuzu_, CG_), the HTML already ships with its own
+   .toggle-lineB spans — so we end up with 4 hamburger lines
+   stacked (two icons on top of each other, with the "CONTACT"
+   label showing between them).
+   Hide the JS-added .toggle-line spans specifically on .new-menu
+   variants; the .toggle-lineB spans handle the icon.
+   ============================================================ */
+.new-menu .toggle-line {
+    display: none;
+}
+
+/* ============================================================
    Mobile: hide the desktop hover-image previews in the
    portfolio showcase on index.html
    ------------------------------------------------------------
