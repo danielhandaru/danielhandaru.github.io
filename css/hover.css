@@ -171,7 +171,11 @@ mark.text-highlight {
    ============================================================ */
 .project-content h2,
 .project-content h3 {
-    color: #000 !important;
+    /* #121212 — matches the site's existing dark elements (menu-ov panels,
+       Spotify sticky player, cygni-loader background). Ties headings into
+       the same dark value used everywhere else instead of introducing pure
+       black. Slightly less harsh against the light-gray body background. */
+    color: #121212 !important;
 }
 
 /* ============================================================
@@ -428,10 +432,11 @@ body.is-home .home-button {
    (HCF_, HCF, CAANZ_, CAANZ, isuzu_ don't have a base rule, so their <a>
    was falling back to the browser-default blue underlined link.) */
 .home-button a {
-    /* Match the hamburger bars (.toggle-lineB { background: #000 }) and the
-       CONTACT label (inherits body color) so the header's left + right
-       elements read as a matched pair rather than two visual weights. */
-    color: #000;
+    /* #121212 — same dark value used by headings and existing dark surfaces
+       across the site. Reads as effectively the same as the hamburger bars
+       at that stroke weight (2px) but keeps a single unified dark tone in
+       the design system. */
+    color: #121212;
     text-decoration: none;
 }
 
