@@ -157,6 +157,23 @@ mark.text-highlight {
 }
 
 /* ============================================================
+   Case study h2 — consistent colour across all landing pages
+   ------------------------------------------------------------
+   Each case study used to set its own bespoke h2 colour in
+   inline styles (HCF purple, Isuzu red, CAANZ blue etc.) plus
+   inline <h2 style="color:…"> attributes on individual headings.
+   Standardise them all to solid black so the section titles read
+   as a unified typographic voice rather than a rainbow. !important
+   is required to beat the inline `style="color:X"` attributes on
+   the h2 elements themselves; scoped to .project-content so
+   only case study body copy is affected, not any other h2 on
+   the site.
+   ============================================================ */
+.project-content h2 {
+    color: #000 !important;
+}
+
+/* ============================================================
    .project-work — sub-head above the project title on case
    studies. Match the homepage .caption styling (thin terracotta
    underline, 6px offset, weight 600) so the label above "Isuzu
