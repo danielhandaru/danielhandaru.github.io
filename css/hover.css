@@ -169,7 +169,8 @@ mark.text-highlight {
    only case study body copy is affected, not any other h2 on
    the site.
    ============================================================ */
-.project-content h2 {
+.project-content h2,
+.project-content h3 {
     color: #000 !important;
 }
 
