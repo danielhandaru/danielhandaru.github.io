@@ -574,23 +574,31 @@ body.is-home .home-button {
 }
 
 /* ============================================================
-   Footer .underline links — plain black, no underline bar
+   Footer .underline links — plain black, underline reveals on hover
    ------------------------------------------------------------
    Covers both the .footer-list contact links (Linkedin /
    Instagram / Go home) AND the "Want to get in touch?" email
    link inside the footer's h1. Overrides per-page inline
-   `footer a.underline { color: #999 }` and strips the Cygni
-   ::before underline bar entirely.
+   `footer a.underline { color: #999 }` for the colour, and
+   REVERSES the Cygni ::before bar: hidden at rest (width: 0),
+   grows to full width on hover from the left edge. Same 300ms
+   cubic-bezier as the .underline pattern elsewhere.
    ============================================================ */
 .site-footer a.underline,
 footer a.underline {
     color: #121212 !important;
 }
 .site-footer a.underline::before,
+footer a.underline::before {
+    left: 0;
+    right: auto;
+    width: 0;
+    background: #121212;
+    transition: width .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
 .site-footer a.underline:hover::before,
-footer a.underline::before,
 footer a.underline:hover::before {
-    display: none;
+    width: 100%;
 }
 
 /* ============================================================
@@ -629,7 +637,10 @@ a.underline {
     list-style-type: square;
 }
 .single-project li::marker {
-    color: #e0004d;
+    /* Standardise bullet colour to the shared terracotta accent instead of
+       the per-page inline #e0004d magenta. Unifies body-copy bullets with
+       the rest of the accent language (hover states, text highlights). */
+    color: var(--accent) !important;
 }
 
 /* Excludes the footer contact list from the body-copy list styling
