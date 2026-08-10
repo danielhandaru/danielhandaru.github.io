@@ -574,15 +574,22 @@ body.is-home .home-button {
 }
 
 /* ============================================================
-   Footer contact list — no underline
+   Footer .underline links — plain black, no underline bar
    ------------------------------------------------------------
-   Linkedin / Instagram / Go home in the .footer-list carry the
-   .underline class which paints a Cygni ::before bar under each
-   link. Strip it in the footer only — the list needs to read as
-   a plain set of contact links, not as active text links.
+   Covers both the .footer-list contact links (Linkedin /
+   Instagram / Go home) AND the "Want to get in touch?" email
+   link inside the footer's h1. Overrides per-page inline
+   `footer a.underline { color: #999 }` and strips the Cygni
+   ::before underline bar entirely.
    ============================================================ */
-.footer-list a.underline::before,
-.footer-list a.underline:hover::before {
+.site-footer a.underline,
+footer a.underline {
+    color: #121212 !important;
+}
+.site-footer a.underline::before,
+.site-footer a.underline:hover::before,
+footer a.underline::before,
+footer a.underline:hover::before {
     display: none;
 }
 
@@ -623,6 +630,18 @@ a.underline {
 }
 .single-project li::marker {
     color: #e0004d;
+}
+
+/* Excludes the footer contact list from the body-copy list styling
+   above — .footer-list should stay bullet-less and inherit its own
+   spacing from Cygni. Since <footer> lives inside .single-project on
+   case studies, the .single-project li rule was giving Linkedin /
+   Instagram / Go home unwanted square bullets. */
+.single-project .footer-list li,
+.single-project .footer-list li::marker {
+    list-style: none;
+    padding-bottom: 15px;
+    font-size: 18px;
 }
 
 /* ============================================================
