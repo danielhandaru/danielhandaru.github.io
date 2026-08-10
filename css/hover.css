@@ -533,28 +533,25 @@ body.is-home .home-button {
     transition: color .25s ease;
 }
 .section-jumps a::after {
-    /* thin rest-state underline; picks up currentColor so it follows the
-       text as it transitions to --accent on hover. */
+    /* Underline sits at full width at rest, retracts to 0 on hover —
+       matches the Cygni a.underline::before treatment used elsewhere
+       on the site (retraction anchored to the right edge). */
     content: "";
     position: absolute;
-    left: 0;
     right: 0;
     bottom: -2px;
+    width: 100%;
     height: 1px;
     background: currentColor;
-    opacity: .5;
-    transition: opacity .25s ease, background-color .25s ease;
+    transition: width .3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-/* Hover state matches the homepage .accordion-title:hover pattern —
-   colour transitions to the shared --accent (terracotta) with no yellow
-   highlight sweep. Underline stays but inherits the new colour. */
 .section-jumps a:hover,
 .section-jumps a:focus-visible {
     color: var(--accent);
 }
 .section-jumps a:hover::after,
 .section-jumps a:focus-visible::after {
-    opacity: 1;
+    width: 0;
 }
 
 /* ============================================================
@@ -574,6 +571,19 @@ body.is-home .home-button {
 .menu-wrapper a:hover,
 .menu-wrapper a:focus-visible {
     text-decoration: none !important;
+}
+
+/* ============================================================
+   Footer contact list — no underline
+   ------------------------------------------------------------
+   Linkedin / Instagram / Go home in the .footer-list carry the
+   .underline class which paints a Cygni ::before bar under each
+   link. Strip it in the footer only — the list needs to read as
+   a plain set of contact links, not as active text links.
+   ============================================================ */
+.footer-list a.underline::before,
+.footer-list a.underline:hover::before {
+    display: none;
 }
 
 /* ============================================================
