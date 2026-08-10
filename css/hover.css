@@ -587,17 +587,30 @@ body.is-home .home-button {
 .site-footer a.underline,
 footer a.underline {
     color: #121212 !important;
+    transition: color .25s ease;
+}
+/* Hover — colour shifts to the shared terracotta accent, matching
+   section-jumps and homepage .accordion-title hover treatment.
+   !important beats the per-page inline `a.underline:hover { color: #ede574 }`. */
+.site-footer a.underline:hover,
+.site-footer a.underline:focus-visible,
+footer a.underline:hover,
+footer a.underline:focus-visible {
+    color: var(--accent) !important;
 }
 .site-footer a.underline::before,
 footer a.underline::before {
     left: 0;
     right: auto;
     width: 0;
-    background: #121212;
-    transition: width .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    background: currentColor;
+    transition: width .3s cubic-bezier(0.645, 0.045, 0.355, 1),
+                background-color .25s ease;
 }
 .site-footer a.underline:hover::before,
-footer a.underline:hover::before {
+.site-footer a.underline:focus-visible::before,
+footer a.underline:hover::before,
+footer a.underline:focus-visible::before {
     width: 100%;
 }
 
